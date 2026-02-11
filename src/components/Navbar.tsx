@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -41,6 +42,7 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
+            <LanguageSwitcher />
             <a
               href="https://wa.me/51941345282?text=Hi!%20I'm%20interested%20in%20a%20luxury%20tour%20to%20Machu%20Picchu"
               target="_blank"
@@ -85,6 +87,9 @@ const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
+              <div className="py-2">
+                <LanguageSwitcher />
+              </div>
               <a
                 href="https://wa.me/51941345282?text=Hi!%20I'm%20interested%20in%20a%20luxury%20tour%20to%20Machu%20Picchu"
                 target="_blank"
