@@ -28,12 +28,12 @@ const LanguageSwitcher = () => {
     <div ref={ref} className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1.5 text-sm font-medium text-foreground/80 hover:text-primary transition-colors px-2 py-1.5 rounded-md hover:bg-primary/5"
+        className="flex items-center gap-1.5 text-sm font-bold text-black/80 hover:text-black transition-colors px-2 py-1.5 rounded-md hover:bg-black/5"
         aria-label="Select language"
       >
         <Globe className="w-4 h-4" />
         <span className="hidden sm:inline">{selected.flag}</span>
-        <span className="hidden md:inline text-xs">{selected.code.toUpperCase()}</span>
+        <span className="hidden md:inline text-xs tracking-tighter">{selected.code.toUpperCase()}</span>
       </button>
 
       <AnimatePresence>
@@ -43,7 +43,7 @@ const LanguageSwitcher = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: 0.95 }}
             transition={{ duration: 0.15 }}
-            className="absolute right-0 top-full mt-2 bg-background border border-border rounded-lg shadow-card-hover overflow-hidden min-w-[160px] z-50"
+            className="absolute right-0 top-full mt-2 bg-white border border-black/10 rounded-xl shadow-xl overflow-hidden min-w-[160px] z-50"
           >
             {languages.map((lang) => (
               <button
@@ -52,14 +52,13 @@ const LanguageSwitcher = () => {
                   setSelected(lang);
                   setIsOpen(false);
                 }}
-                className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm transition-colors hover:bg-primary/5 ${
-                  selected.code === lang.code
-                    ? "text-primary font-semibold bg-primary/5"
-                    : "text-foreground/80"
-                }`}
+                className={`w-full flex items-center gap-3 px-4 py-3 text-sm transition-colors hover:bg-black/5 ${selected.code === lang.code
+                    ? "text-black font-bold bg-black/5"
+                    : "text-black/70"
+                  }`}
               >
                 <span className="text-base">{lang.flag}</span>
-                <span>{lang.label}</span>
+                <span className="tracking-tight">{lang.label}</span>
               </button>
             ))}
           </motion.div>

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Facebook } from "lucide-react";
+import logo from "@/assets/logos/logo.png";
 
 const Footer = () => {
   return (
@@ -8,9 +9,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <h3 className="font-heading text-2xl font-bold mb-4">
-              Leading <span className="text-primary">Peru</span> Travel
-            </h3>
+            <Link to="/" className="inline-block mb-6">
+              <img
+                src={logo}
+                alt="Leading Peru Travel"
+                className="h-14 lg:h-16 w-auto object-contain brightness-0 invert"
+              />
+            </Link>
             <p className="text-background/70 text-sm leading-relaxed mb-4">
               Discover the new Wonders of Peru, enjoy your exciting South American adventure.
             </p>
