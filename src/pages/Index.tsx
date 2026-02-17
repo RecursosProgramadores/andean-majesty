@@ -30,7 +30,6 @@ const fadeInUp = {
 };
 
 const Index = () => {
-  const [testimonialIdx, setTestimonialIdx] = useState(0);
   const featuredTours = tours.slice(0, 6);
 
   return (
@@ -253,35 +252,84 @@ const Index = () => {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="py-16 lg:py-24 bg-card">
-        <div className="container mx-auto px-4">
-          <motion.div {...fadeInUp} className="text-center mb-12">
-            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground">What Our Travelers Say</h2>
+      <section className="py-20 lg:py-32 bg-[#f8f5f0] overflow-hidden">
+        <div className="container mx-auto px-4 lg:px-8">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">Real Travelers, Real Stories</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto font-medium">Discover why hundreds of families and explorers choose Andean Majesty for their life-changing journeys.</p>
           </motion.div>
-          <div className="max-w-3xl mx-auto relative">
-            <motion.div key={testimonialIdx} initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.4 }} className="bg-background rounded-2xl p-8 lg:p-12 shadow-card text-center">
-              <Quote className="w-10 h-10 text-accent/40 mx-auto mb-6" />
-              <p className="text-foreground text-lg lg:text-xl leading-relaxed italic font-body">
-                "{testimonials[testimonialIdx].text}"
-              </p>
-              <div className="mt-6 flex items-center justify-center gap-1">
-                {Array.from({ length: testimonials[testimonialIdx].rating }).map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-accent text-accent" />
+
+          <div className="relative group">
+            <div className="flex overflow-hidden">
+              <motion.div
+                animate={{ x: "-Infinity" }}
+                transition={{
+                  duration: 40,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+                className="flex gap-6 lg:gap-8 hover:[animation-play-state:paused]"
+              >
+                {/* Duplicate the array to create the infinite loop effect */}
+                {[...testimonials, ...testimonials].map((t, i) => (
+                  <div
+                    key={i}
+                    className="shrink-0 w-[320px] md:w-[350px] lg:w-[400px] bg-white rounded-3xl p-8 shadow-card hover:shadow-luxury transition-all duration-500 flex flex-col h-full border border-black/5"
+                  >
+                    <div className="flex gap-1 mb-4">
+                      {Array.from({ length: 5 }).map((_, starIdx) => (
+                        <Star
+                          key={starIdx}
+                          className={`w-4 h-4 ${starIdx < t.rating ? "fill-[#e6c64f] text-[#e6c64f]" : "text-muted-foreground/20"}`}
+                        />
+                      ))}
+                    </div>
+
+                    <h3 className="font-heading font-bold text-lg mb-3 text-foreground line-clamp-1">"{t.title}"</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed italic mb-8 flex-grow">
+                      "{t.text}"
+                    </p>
+
+                    <div className="mt-auto space-y-6">
+                      <div className="flex items-center gap-4">
+                        <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">
+                          {t.name.charAt(0)}
+                        </div>
+                        <div>
+                          <p className="font-bold text-sm text-foreground">{t.name}</p>
+                          <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest leading-tight">{t.location}</p>
+                        </div>
+                      </div>
+
+                      {t.response && (
+                        <div className="bg-[#f8f5f0] p-4 rounded-2xl border-l-2 border-[#e6c64f]/50 mt-4">
+                          <p className="text-[10px] font-bold uppercase tracking-widest text-[#e6c64f] mb-2 flex items-center gap-1.5">
+                            <Quote className="w-3 h-3 rotate-180" /> Our Response
+                          </p>
+                          <p className="text-[11px] text-muted-foreground leading-relaxed line-clamp-3">
+                            {t.response}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 ))}
-              </div>
-              <p className="mt-4 font-heading font-bold text-foreground">{testimonials[testimonialIdx].name}</p>
-              <p className="text-muted-foreground text-sm">{testimonials[testimonialIdx].location}</p>
-            </motion.div>
-            <div className="flex justify-center gap-3 mt-8">
-              <button onClick={() => setTestimonialIdx((p) => (p - 1 + testimonials.length) % testimonials.length)} className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors" aria-label="Previous testimonial">
-                <ChevronLeft className="w-5 h-5 text-primary" />
-              </button>
-              {testimonials.map((_, i) => (
-                <button key={i} onClick={() => setTestimonialIdx(i)} className={`w-3 h-3 rounded-full transition-colors ${i === testimonialIdx ? "bg-primary" : "bg-primary/20"}`} aria-label={`Go to testimonial ${i + 1}`} />
-              ))}
-              <button onClick={() => setTestimonialIdx((p) => (p + 1) % testimonials.length)} className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors" aria-label="Next testimonial">
-                <ChevronRight className="w-5 h-5 text-primary" />
-              </button>
+              </motion.div>
+            </div>
+
+            {/* Gradient Mask to soften edges */}
+            <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#f8f5f0] to-transparent z-10 pointer-events-none" />
+            <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#f8f5f0] to-transparent z-10 pointer-events-none" />
+
+            <div className="mt-16 text-center">
+              <a
+                href="https://www.tripadvisor.com.pe/Attraction_Review-g8734342-d14029313-Reviews-Leading_Peru_Travel-San_Sebastian_Cusco_Region.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-foreground hover:text-primary transition-colors border-b-2 border-primary/20 pb-2"
+              >
+                View all reviews on TripAdvisor <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </div>

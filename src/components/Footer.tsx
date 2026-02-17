@@ -1,87 +1,130 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Facebook } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import logo from "@/assets/logos/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-background">
-      <div className="container mx-auto px-4 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {/* Brand */}
-          <div className="lg:col-span-1">
-            <Link to="/" className="inline-block mb-6">
+    <footer className="bg-[#1a1a1a] text-[#f5f5f5] pt-16 pb-8 border-t border-white/5">
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+          {/* Column 1: Membership/Brand */}
+          <div className="space-y-6">
+            <Link to="/" className="inline-block transform transition-hover hover:scale-105">
               <img
                 src={logo}
-                alt="Leading Peru Travel"
-                className="h-14 lg:h-16 w-auto object-contain brightness-0 invert"
+                alt="Andean Majesty"
+                className="h-16 w-auto object-contain brightness-0 invert"
               />
             </Link>
-            <p className="text-background/70 text-sm leading-relaxed mb-4">
-              Discover the new Wonders of Peru, enjoy your exciting South American adventure.
+            <p className="text-white/50 text-xs leading-relaxed max-w-xs font-medium uppercase tracking-wider">
+              Discover the new Wonders of Peru, enjoy your exciting South American adventure with our premium handcrafted tours.
             </p>
-            <p className="text-background/50 text-xs">
-              Leading Peru Travel S.R.L.<br />
-              RUC 20601234506
-            </p>
+            <div className="pt-4 flex flex-wrap gap-4 opacity-50 grayscale hover:grayscale-0 transition-all">
+              {/* Membership Logos Placeholders */}
+              <div className="w-12 h-12 bg-white/10 rounded flex items-center justify-center text-[8px] font-bold text-center p-1 uppercase">Sernanp</div>
+              <div className="w-12 h-12 bg-white/10 rounded flex items-center justify-center text-[8px] font-bold text-center p-1 uppercase">Dircetur</div>
+              <div className="w-12 h-12 bg-white/10 rounded flex items-center justify-center text-[8px] font-bold text-center p-1 uppercase">Promperu</div>
+            </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Column 2: Customer Service */}
           <div>
-            <h4 className="font-heading text-lg font-semibold mb-4 text-accent">Explore</h4>
-            <nav className="flex flex-col gap-2">
-              <Link to="/" className="text-background/70 hover:text-primary transition-colors text-sm">Home</Link>
-              <Link to="/tours" className="text-background/70 hover:text-primary transition-colors text-sm">Tours & Packages</Link>
-              <Link to="/about" className="text-background/70 hover:text-primary transition-colors text-sm">About Us</Link>
-              <Link to="/gallery" className="text-background/70 hover:text-primary transition-colors text-sm">Gallery</Link>
-              <Link to="/contact" className="text-background/70 hover:text-primary transition-colors text-sm">Contact</Link>
-            </nav>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="font-heading text-lg font-semibold mb-4 text-accent">Contact</h4>
-            <div className="flex flex-col gap-3 text-sm">
-              <a href="mailto:leadingperu@gmail.com" className="flex items-center gap-2 text-background/70 hover:text-primary transition-colors">
-                <Mail className="w-4 h-4 shrink-0" />
-                leadingperu@gmail.com
-              </a>
-              <a href="https://wa.me/51941345282" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-background/70 hover:text-primary transition-colors">
-                <Phone className="w-4 h-4 shrink-0" />
-                +51 941 345 282
-              </a>
-              <div className="flex items-start gap-2 text-background/70">
-                <MapPin className="w-4 h-4 shrink-0 mt-0.5" />
-                <span>Calle Fierro 478, Cercado, Cusco, Peru</span>
+            <h4 className="text-[#e6c64f] font-heading font-bold text-sm uppercase tracking-[0.2em] mb-8 border-b border-white/10 pb-2 inline-block">
+              Customer Service
+            </h4>
+            <div className="space-y-6">
+              <div className="space-y-2">
+                <p className="text-xs font-bold text-white/80 uppercase tracking-widest">USA Office</p>
+                <div className="flex items-start gap-3 text-white/50 group">
+                  <MapPin className="w-4 h-4 shrink-0 transition-colors group-hover:text-primary" />
+                  <span className="text-xs leading-relaxed">123 Market St, San Francisco, CA 94103, United States</span>
+                </div>
+              </div>
+              <div className="space-y-2">
+                <p className="text-xs font-bold text-white/80 uppercase tracking-widest">Peru Office</p>
+                <div className="flex items-start gap-3 text-white/50 group">
+                  <MapPin className="w-4 h-4 shrink-0 transition-colors group-hover:text-primary" />
+                  <span className="text-xs leading-relaxed">Calle Fierro 478, Cercado, Cusco, Peru</span>
+                </div>
+              </div>
+              <div className="pt-4 space-y-3">
+                <a href="mailto:leadingperu@gmail.com" className="flex items-center gap-3 text-white/50 hover:text-primary transition-colors text-xs font-medium group">
+                  <Mail className="w-4 h-4 shrink-0 group-hover:scale-110 transition-transform" />
+                  leadingperu@gmail.com
+                </a>
+                <a href="tel:+18001234567" className="flex items-center gap-3 text-white/50 hover:text-primary transition-colors text-xs font-medium group">
+                  <Phone className="w-4 h-4 shrink-0 group-hover:scale-110 transition-transform" />
+                  USA/Canada: +1 800 123 4567
+                </a>
+                <a href="https://wa.me/51941345282" className="flex items-center gap-3 text-[#25D366] hover:brightness-110 transition-all text-sm font-bold group">
+                  <MessageCircle className="w-5 h-5 shrink-0 group-hover:rotate-12 transition-transform" />
+                  WhatsApp Travel Agent
+                </a>
               </div>
             </div>
           </div>
 
-          {/* Legal & Social */}
+          {/* Column 3: Company Links */}
           <div>
-            <h4 className="font-heading text-lg font-semibold mb-4 text-accent">Legal</h4>
-            <div className="flex flex-col gap-2 text-sm mb-6">
-              <a href="#" className="text-background/70 hover:text-primary transition-colors">Privacy Policy</a>
-              <a href="#" className="text-background/70 hover:text-primary transition-colors">Terms & Conditions</a>
-              <a href="#" className="text-background/70 hover:text-primary transition-colors">Digital Claims Book</a>
-            </div>
-            <div className="flex items-center gap-3">
-              <a
-                href="https://www.facebook.com/Machupicchutraveltour"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors"
-                aria-label="Visit our Facebook page"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
+            <h4 className="text-[#e6c64f] font-heading font-bold text-sm uppercase tracking-[0.2em] mb-8 border-b border-white/10 pb-2 inline-block">
+              Company
+            </h4>
+            <nav className="flex flex-col gap-4">
+              {[
+                { label: "About Us", to: "/about" },
+                { label: "Our Team", to: "/about/team" },
+                { label: "Social Action Projects in Peru", to: "/about/social-action" },
+                { label: "Responsible Travel", to: "/about/responsible-travel" },
+                { label: "Accreditations & Awards", to: "/about#awards" },
+                { label: "Register your travel agencies", to: "/contact" }
+              ].map((link) => (
+                <Link
+                  key={link.label}
+                  to={link.to}
+                  className="text-white/50 hover:text-white transition-colors text-xs font-medium uppercase tracking-widest flex items-center gap-2 group"
+                >
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all scale-0 group-hover:scale-100" />
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          {/* Column 4: Policies and Legal */}
+          <div>
+            <h4 className="text-[#e6c64f] font-heading font-bold text-sm uppercase tracking-[0.2em] mb-8 border-b border-white/10 pb-2 inline-block">
+              Policies and Legal
+            </h4>
+            <div className="space-y-6">
+              <nav className="flex flex-col gap-4">
+                <Link to="#" className="text-white/50 hover:text-white transition-colors text-xs font-medium uppercase tracking-widest">Privacy Policy</Link>
+                <Link to="#" className="text-white/50 hover:text-white transition-colors text-xs font-medium uppercase tracking-widest">Terms & Conditions</Link>
+              </nav>
+              <div className="pt-4">
+                <p className="text-[10px] text-white/30 uppercase tracking-[0.3em] font-bold mb-4">Official Protection</p>
+                <a href="#" className="inline-block bg-white/5 border border-white/10 rounded-lg p-4 hover:bg-white/10 transition-all group">
+                  <span className="text-[10px] font-bold text-white/70 group-hover:text-white block uppercase tracking-widest mb-1">
+                    Digital Claims Book
+                  </span>
+                  <div className="h-1 w-full bg-primary/20 rounded-full overflow-hidden">
+                    <div className="h-full bg-primary w-1/3" />
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-background/10 mt-10 pt-6 text-center">
-          <p className="text-background/50 text-xs">
-            © 2026 Leading Peru Travel. All rights reserved.
+        {/* Bottom Bar */}
+        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-white/20 text-[10px] uppercase font-bold tracking-[0.4em]">
+            © 2026 Andean Majesty - All rights reserved
           </p>
+          <div className="flex gap-8">
+            {/* Simple social icons could go here if needed, but per request "Sin redes sociales visibles en footer principal" */}
+            <span className="text-white/10 text-[10px] uppercase font-bold tracking-widest">Premium Travel Experiences</span>
+          </div>
         </div>
       </div>
     </footer>

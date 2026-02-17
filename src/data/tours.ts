@@ -45,27 +45,43 @@ export const destinations = [
 
 export const testimonials = [
   {
-    name: "Sarah & James Mitchell",
-    location: "New York, USA",
-    text: "Leading Peru Travel created the most incredible honeymoon experience. Every detail was perfect – from the luxury train to Machu Picchu to the private dinner overlooking the Sacred Valley. Truly once-in-a-lifetime.",
+    name: "Hector B",
+    location: "Escrita el 4 de abril de 2024",
+    title: "Excelente tour",
+    text: "Todo muy organizado, los guías excelentes y con muy buena disposición, nos recogían a la hora indicada, fue un viaje increíble. Recomendados 100%.",
     rating: 5,
+    response: "¡Muchas gracias por tu comentario! Nos alegra saber que disfrutaste de un viaje increíble y que nuestra organización y guías cumplieron con tus expectativas. (Respuesta del 16 de setiembre de 2024)"
   },
   {
-    name: "Dr. Hans Weber",
-    location: "Munich, Germany",
-    text: "I've traveled extensively, but this Peru trip was extraordinary. The community visit was deeply moving, and the guides' knowledge of Incan history was remarkable. Five stars isn't enough.",
+    name: "Dante P",
+    location: "Escrita el 9 de noviembre de 2022",
+    title: "Viaje en familia.",
+    text: "Excelente servicio, seriedad y puntualidad en todos los tours. Cada tours acompañado de muy buenos guías turísticos, en explicación y atención. Todo esto hizo que el viaje sea muy placentero. Muy recomendable!!!.",
     rating: 5,
+    response: "¡Muchísimas gracias por tu amable reseña! Nos hace muy felices saber que tu viaje en familia fue placentero y que apreciaste la puntualidad y calidad de nuestros guías. (Respuesta del 16 de setiembre de 2024)"
   },
   {
-    name: "Claire Dubois",
-    location: "Paris, France",
-    text: "From the Atacama Desert to Machu Picchu, every moment was curated to perfection. The attention to detail and the warmth of the team made us feel like family. We're already planning our return.",
+    name: "Paul G",
+    location: "Escrita el 3 de setiembre de 2022",
+    title: "Cumplen con todo que ofrecen.",
+    text: "Todo excelente con Leading Peru Travel. Muy recomendado. Nos llevaron a Machupicchu, todo dentro de los horarios y servicios ofrecidos.",
     rating: 5,
+    response: "¡Muchas gracias por tu excelente reseña! Nos esforzamos por cumplir cada promesa y nos alegra que tu experiencia en Machu Picchu fuera perfecta. (Respuesta del 16 de setiembre de 2024)"
   },
   {
-    name: "The Patterson Family",
-    location: "London, UK",
-    text: "Traveling with two teenagers can be challenging, but Leading Peru Travel made it seamless. The Amazon eco-lodge was a highlight – our kids are still talking about the night safari!",
+    name: "olivia d",
+    location: "Escrita el 20 de junio de 2018",
+    title: "Una agencia muy cercana al cliente",
+    text: "Viajamos en familia y descubrimos que nos trataron más como amigos que como clientes... Gladys siempre respondería de inmediato, educadamente... Una agencia perfecta. Mis criterios son simples si está de vacaciones y se siente presionado por la agencia, entonces no son vacaciones. Con Leading Peru esto nunca sucederá...",
     rating: 5,
+    response: "Thank you very much for your kind words! We pride ourselves on the personal touch and treating our guests like family. (Response on September 16, 2024)"
+  },
+  {
+    name: "Leah C",
+    location: "Escrita el 12 de junio de 2018",
+    title: "Viaje de un día a Machu Picchu",
+    text: "Utilizamos para el Perú lleva un viaje de un día a Machu Picchu... Todo el proceso ha ido muy bien... La única pega es nuestro guía no estaba allí cuando nos bajamos... pero sucedió y nos alegramos de que lo hizo. Una vez con el guía de habla inglesa... todo fue realmente genial...",
+    rating: 4,
+    response: "Thank you so much for your detailed review! We appreciate your honesty and are glad that despite the initial guide hiccup, the rest of your experience was great. (Response on September 16, 2024)"
   },
 ];

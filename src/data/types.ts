@@ -13,6 +13,9 @@ export interface Tour {
     badge?: string;
     included: string[];
     notIncluded?: string[];
-    itinerary: { day: number; title: string; description: string; image?: string }[];
+    itinerary: { day: number; title: string; description: string; summary?: string; image?: string }[];
     gallery?: string[];
+    subtitle?: string;
+    nights?: number;
+    styleSummary?: string;
 }

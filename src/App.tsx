@@ -9,6 +9,10 @@ import TourDetail from "./pages/TourDetail";
 import About from "./pages/About";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
+import Team from "./pages/Team";
+import SocialAction from "./pages/SocialAction";
+import ResponsibleTravel from "./pages/ResponsibleTravel";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,7 +28,11 @@ const App = () => (
           <Route path="/tours" element={<Tours />} />
           <Route path="/tours/:slug" element={<TourDetail />} />
           <Route path="/about" element={<About />} />
+          <Route path="/about/team" element={<Team />} />
+          <Route path="/about/social-action" element={<SocialAction />} />
+          <Route path="/about/responsible-travel" element={<ResponsibleTravel />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
