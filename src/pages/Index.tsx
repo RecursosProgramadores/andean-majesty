@@ -50,7 +50,7 @@ const Index = () => {
             transition={{ duration: 0.8 }}
             className="font-heading text-4xl md:text-5xl lg:text-7xl font-bold text-background leading-tight max-w-4xl mx-auto"
           >
-            Discover the new Wonders of Peru, enjoy your exciting South American adventure
+            Luxury experiences. Tailor-made trips
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -58,7 +58,7 @@ const Index = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="mt-6 text-lg md:text-xl text-background/85 font-body max-w-2xl mx-auto"
           >
-            14+ years creating unforgettable luxury journeys
+            Experience Peru through exclusive, custom-designed luxury journeys. Over 15 years of passion creating unforgettable dream journeys.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -90,7 +90,7 @@ const Index = () => {
         <div className="container mx-auto px-4 py-8 lg:py-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {[
-              { icon: Clock, title: "14+ Years", desc: "Experience" },
+              { icon: Clock, title: "15+ Years", desc: "Experience" },
               { icon: Sparkles, title: "Fully Personalized", desc: "Luxury Travel" },
               { icon: Users, title: "Sustainable", desc: "& Community-Focused" },
               { icon: Shield, title: "24/7", desc: "Concierge Support" },
@@ -109,8 +109,41 @@ const Index = () => {
         </div>
       </section>
 
+      {/* WHY TRAVEL WITH US (EXTENDED) */}
+      <section className="py-16 lg:py-24 bg-background overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <motion.div {...fadeInUp} className="text-center mb-12">
+              <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">
+                Why Travel With Leading Peru Travel?
+              </h2>
+              <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+              {[
+                "With over 15 years of experience, Machu Picchu Travel Tour specializes in creating authentic, tailor-made journeys across Peru and South America. Our passion for excellence, deep destination knowledge, and meticulous attention to detail ensure every trip is thoughtfully designed and flawlessly executed.",
+                "We work with expert local guides, carefully selected accommodations, and trusted partners to deliver meaningful experiences that go beyond traditional tourism. From cultural encounters to exclusive adventures and luxury escapes, each journey is crafted to reflect your interests, comfort, and travel style.",
+                "At Machu Picchu Travel Tour, we believe travel should be personal, enriching, and unforgettable. From the moment you start planning until the end of your journey, our dedicated team is by your side—so you can explore with confidence, comfort, and peace of mind."
+              ].map((text, i) => (
+                <motion.div
+                  key={i}
+                  {...fadeInUp}
+                  transition={{ ...fadeInUp.transition, delay: i * 0.15 }}
+                  className="bg-card p-6 lg:p-8 rounded-xl border border-border/50 shadow-luxury hover:shadow-card-hover transition-all duration-300 group flex flex-col"
+                >
+                  <p className="text-muted-foreground leading-relaxed text-base lg:text-lg group-hover:text-foreground transition-colors">
+                    {text}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FEATURED DESTINATIONS */}
-      <section className="py-16 lg:py-24">
+      <section className="py-16 lg:py-24 bg-card">
         <div className="container mx-auto px-4">
           <motion.div {...fadeInUp} className="text-center mb-12">
             <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground">Featured Destinations</h2>

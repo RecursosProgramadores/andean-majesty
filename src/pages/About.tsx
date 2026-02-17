@@ -19,7 +19,7 @@ const About = () => {
         <div className="absolute inset-0 bg-hero-overlay" />
         <div className="relative z-10 text-center">
           <h1 className="font-heading text-4xl lg:text-5xl font-bold text-background">About Us</h1>
-          <p className="mt-3 text-background/80 text-lg max-w-xl mx-auto">14+ years of passion, expertise, and commitment to unforgettable travel experiences.</p>
+          <p className="mt-3 text-background/80 text-lg max-w-xl mx-auto">15+ years of passion, expertise, and commitment to unforgettable travel experiences.</p>
         </div>
       </section>
 
@@ -31,7 +31,7 @@ const About = () => {
               <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-6">Our Story</h2>
               <div className="prose prose-lg text-muted-foreground space-y-4">
                 <p>
-                  Leading Peru Travel was born from a deep passion for sharing the wonders of South America with the world. For over 14 years, we have been crafting all-inclusive luxury packages to Machu Picchu and beyond — creating journeys that go far deeper than typical tourism.
+                  Leading Peru Travel was born from a deep passion for sharing the wonders of South America with the world. For over 15 years, we have been crafting all-inclusive luxury packages to Machu Picchu and beyond — creating journeys that go far deeper than typical tourism.
                 </p>
                 <p>
                   Founded in Cusco, the ancient capital of the Inca Empire, our team of expert local guides and travel designers brings an insider's perspective to every itinerary. We believe that true luxury isn't just about 5-star hotels and first-class trains — it's about authentic connections with the land, the people, and the living culture of Peru, Bolivia, Chile, and Ecuador.
