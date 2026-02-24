@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, Phone, MapPin, Send, MessageCircle, ChevronRight, ChevronLeft, User, Globe, Plane, Info, Calendar as CalendarIcon, Users } from "lucide-react";
+import { Mail, Phone, MapPin, Send, ChevronRight, ChevronLeft, User, Globe, Plane, Info, Calendar as CalendarIcon, Users } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
 import Layout from "@/components/Layout";
 import heroCusco from "@/assets/hero-cusco.jpg";
+import whatsappIcon from "@/assets/logos/whatsapp.svg";
+import facebookIcon from "@/assets/logos/facebook.svg";
 import { tours } from "@/data/tours";
 import {
   Accordion,
@@ -197,7 +199,7 @@ const Contact = () => {
                   <div className="space-y-4">
                     <a href="https://wa.me/51984509207" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group">
                       <div className="w-10 h-10 rounded-full bg-[#25D366]/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <MessageCircle className="w-5 h-5 text-[#25D366]" />
+                        <img src={whatsappIcon} alt="WhatsApp" className="w-5 h-5" />
                       </div>
                       <span className="font-medium">+51 984 509 207</span>
                     </a>
@@ -206,6 +208,12 @@ const Contact = () => {
                         <Mail className="w-5 h-5 text-primary" />
                       </div>
                       <span className="font-medium">leadingperu@gmail.com</span>
+                    </a>
+                    <a href="https://www.facebook.com/Machupicchutraveltour" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group">
+                      <div className="w-10 h-10 rounded-full bg-blue-600/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <img src={facebookIcon} alt="Facebook" className="w-5 h-5" />
+                      </div>
+                      <span className="font-medium">Facebook Page</span>
                     </a>
                   </div>
                 </div>

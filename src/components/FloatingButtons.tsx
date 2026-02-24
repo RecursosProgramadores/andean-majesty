@@ -1,5 +1,6 @@
-import { MessageCircle, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
 import { motion } from "framer-motion";
+import whatsappIcon from "@/assets/logos/whatsapp.svg";
 
 const FloatingButtons = () => {
   return (
@@ -32,7 +33,7 @@ const FloatingButtons = () => {
           className="w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center shadow-luxury hover:scale-110 transition-transform group"
           aria-label="Chat with us on WhatsApp"
         >
-          <MessageCircle className="w-6 h-6 text-white" />
+          <img src={whatsappIcon} alt="WhatsApp" className="w-8 h-8" />
           {/* Tooltip */}
           <span className="absolute right-full mr-3 px-2 py-1 bg-black text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
             WhatsApp

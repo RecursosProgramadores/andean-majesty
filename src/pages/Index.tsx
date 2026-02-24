@@ -152,7 +152,7 @@ const Index = () => {
             {destinations.map((dest, i) => (
               <motion.div key={dest.name} {...fadeInUp} transition={{ ...fadeInUp.transition, delay: i * 0.1 }}>
                 <Link
-                  to={`/tours?country=${dest.name}`}
+                  to={`/destinations/${dest.name.toLowerCase()}`}
                   className="group block relative overflow-hidden rounded-xl aspect-[3/4] shadow-card hover:shadow-card-hover transition-all duration-500"
                 >
                   <img

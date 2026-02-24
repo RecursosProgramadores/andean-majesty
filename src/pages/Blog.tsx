@@ -1,24 +1,30 @@
 import React, { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
-import { motion, AnimatePresence } from "framer-motion";
-import { Calendar, Search, ArrowRight, Instagram, Mail, Phone, MapPin, Star, ChevronLeft, Share2, Facebook, Twitter, Link as LinkIcon } from "lucide-react";
+import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
+import { Calendar, Search, ArrowRight, Instagram, Mail, Phone, MapPin, Star, ChevronLeft, Share2, Twitter, Link as LinkIcon } from "lucide-react";
 import { allBlogPosts } from "@/data/blogs";
 import { BlogPost } from "@/types/blog";
 
 // Image imports (using existing assets)
 import heroImg from "@/assets/hero-cusco.jpg";
 import destPeru from "@/assets/dest-peru.jpg";
+import facebookIcon from "@/assets/logos/facebook.svg";
 import destBolivia from "@/assets/dest-bolivia.jpg";
 import destEcuador from "@/assets/dest-ecuador.jpg";
 import destChile from "@/assets/dest-chile.jpg";
-import tourColca from "@/assets/tour-colca.jpg";
-import tourTiticaca from "@/assets/tour-titicaca.jpg";
 
 import { Link } from "react-router-dom";
 
 const Blog = () => {
     const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
     const [searchQuery, setSearchQuery] = useState("");
+
+    const { scrollYProgress } = useScroll();
+    const scaleX = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001
+    });
 
     // Scroll to top when post is selected
     useEffect(() => {
@@ -206,27 +212,39 @@ const Blog = () => {
                             </div>
                         </section>
                     </motion.div>
-                ) : (
+                ) : selectedPost && (
                     <motion.div
                         key="post-detail"
-                        initial={{ opacity: 0, scale: 0.98 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 1.02 }}
-                        className="bg-background min-h-screen"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="bg-background min-h-screen relative"
                     >
-                        {/* Sticky Post Header */}
-                        <div className="sticky top-0 z-50 bg-background/90 backdrop-blur-xl border-b border-border/50 py-5">
-                            <div className="container mx-auto px-4 flex items-center justify-between">
+                        {/* Scroll Progress Bar */}
+                        <motion.div
+                            className="fixed top-16 lg:top-[calc(5.5rem+1.6rem)] left-0 right-0 h-1 bg-primary z-[60] origin-left"
+                            style={{ scaleX }}
+                        />
+
+                        {/* Sticky Post Header / Quick Actions */}
+                        <div className="sticky top-16 lg:top-[calc(5rem+1.5rem)] z-50 bg-background/80 backdrop-blur-xl border-b border-border/40 py-4 shadow-sm">
+                            <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between">
                                 <button
                                     onClick={() => setSelectedPost(null)}
-                                    className="flex items-center gap-3 text-sm font-black uppercase tracking-[0.2em] text-muted-foreground hover:text-primary transition-colors group"
+                                    className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground hover:text-primary transition-all group py-2 px-4 rounded-full hover:bg-primary/5 border border-transparent hover:border-primary/10"
                                 >
-                                    <ChevronLeft className="w-6 h-6 transition-transform group-hover:-translate-x-1" /> Return to Journal
+                                    <ChevronLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" /> Return to Journal
                                 </button>
-                                <div className="flex gap-6">
-                                    <Facebook className="w-5 h-5 text-muted-foreground cursor-pointer hover:text-primary transition-colors" />
-                                    <Twitter className="w-5 h-5 text-muted-foreground cursor-pointer hover:text-primary transition-colors" />
-                                    <Share2 className="w-5 h-5 text-muted-foreground cursor-pointer hover:text-primary transition-colors" />
+
+                                <div className="flex items-center gap-4 border-l border-border/50 ml-4 pl-4 md:ml-6 md:pl-6">
+                                    <span className="hidden md:block text-[10px] font-black uppercase tracking-widest text-muted-foreground/60 mr-2">Share story</span>
+                                    <div className="flex gap-4">
+                                        <a href="https://www.facebook.com/Machupicchutraveltour" target="_blank" rel="noopener noreferrer">
+                                            <img src={facebookIcon} alt="Facebook" className="w-4 h-4 text-muted-foreground cursor-pointer hover:text-primary transition-all hover:scale-110 opacity-70 hover:opacity-100" />
+                                        </a>
+                                        <Twitter className="w-4 h-4 text-muted-foreground cursor-pointer hover:text-primary transition-all hover:scale-110" />
+                                        <Share2 className="w-4 h-4 text-muted-foreground cursor-pointer hover:text-primary transition-all hover:scale-110" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -294,7 +312,9 @@ const Blog = () => {
                                     </p>
                                     <div className="flex justify-center md:justify-start gap-6 pt-4">
                                         <Instagram className="w-6 h-6 cursor-pointer hover:text-primary transition-colors" />
-                                        <Facebook className="w-6 h-6 cursor-pointer hover:text-primary transition-colors" />
+                                        <a href="https://www.facebook.com/Machupicchutraveltour" target="_blank" rel="noopener noreferrer">
+                                            <img src={facebookIcon} alt="Facebook" className="w-6 h-6 cursor-pointer hover:text-primary transition-colors opacity-70 hover:opacity-100" />
+                                        </a>
                                         <Twitter className="w-6 h-6 cursor-pointer hover:text-primary transition-colors" />
                                         <LinkIcon className="w-6 h-6 cursor-pointer hover:text-primary transition-colors" />
                                     </div>

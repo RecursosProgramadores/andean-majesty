@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import logo from "@/assets/logos/logo.png";
+import whatsappIcon from "@/assets/logos/whatsapp.svg";
+import facebookIcon from "@/assets/logos/facebook.svg";
+import claimsBookImg from "@/assets/logos/libroreclamaciones.jpeg";
 
 const Footer = () => {
   return (
@@ -58,7 +61,7 @@ const Footer = () => {
                   +51 984 509 207
                 </a>
                 <a href="https://wa.me/51984509207" className="flex items-center gap-3 text-[#25D366] hover:brightness-110 transition-all text-sm font-bold group">
-                  <MessageCircle className="w-5 h-5 shrink-0 group-hover:rotate-12 transition-transform" />
+                  <img src={whatsappIcon} alt="WhatsApp" className="w-5 h-5 shrink-0 group-hover:rotate-12 transition-transform" />
                   WhatsApp Travel Agent
                 </a>
               </div>
@@ -98,18 +101,22 @@ const Footer = () => {
             </h4>
             <div className="space-y-6">
               <nav className="flex flex-col gap-4">
-                <Link to="#" className="text-white/50 hover:text-white transition-colors text-xs font-medium uppercase tracking-widest">Privacy Policy</Link>
-                <Link to="#" className="text-white/50 hover:text-white transition-colors text-xs font-medium uppercase tracking-widest">Terms & Conditions</Link>
+                <Link to="/privacy-policy" className="text-white/50 hover:text-white transition-colors text-xs font-medium uppercase tracking-widest">Privacy Policy</Link>
+                <Link to="/terms-conditions" className="text-white/50 hover:text-white transition-colors text-xs font-medium uppercase tracking-widest">Terms & Conditions</Link>
               </nav>
               <div className="pt-4">
                 <p className="text-[10px] text-white/30 uppercase tracking-[0.3em] font-bold mb-4">Official Protection</p>
-                <a href="#" className="inline-block bg-white/5 border border-white/10 rounded-lg p-4 hover:bg-white/10 transition-all group">
-                  <span className="text-[10px] font-bold text-white/70 group-hover:text-white block uppercase tracking-widest mb-1">
-                    Digital Claims Book
-                  </span>
-                  <div className="h-1 w-full bg-primary/20 rounded-full overflow-hidden">
-                    <div className="h-full bg-primary w-1/3" />
-                  </div>
+                <a
+                  href="https://forms.gle/YaXB1nhvNkimJGUT7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block transition-all hover:brightness-110"
+                >
+                  <img
+                    src={claimsBookImg}
+                    alt="Libro de Reclamaciones"
+                    className="h-16 w-auto rounded-lg shadow-lg border border-white/10"
+                  />
                 </a>
               </div>
             </div>
@@ -121,8 +128,10 @@ const Footer = () => {
           <p className="text-white/20 text-[10px] uppercase font-bold tracking-[0.4em]">
             © 2026 Andean Majesty - All rights reserved
           </p>
-          <div className="flex gap-8">
-            {/* Simple social icons could go here if needed, but per request "Sin redes sociales visibles en footer principal" */}
+          <div className="flex gap-8 items-center">
+            <a href="https://www.facebook.com/Machupicchutraveltour" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-primary transition-colors">
+              <img src={facebookIcon} alt="Facebook" className="w-5 h-5 brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
+            </a>
             <span className="text-white/10 text-[10px] uppercase font-bold tracking-widest">Premium Travel Experiences</span>
           </div>
         </div>

@@ -1,9 +1,10 @@
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Clock, Check, X, ArrowLeft, ArrowRight, MessageCircle, Calendar, Star, Phone } from "lucide-react";
+import { MapPin, Clock, Check, X, ArrowLeft, ArrowRight, Calendar, Star, Phone } from "lucide-react";
 import Layout from "@/components/Layout";
 import { tours } from "@/data/tours";
+import whatsappIcon from "@/assets/logos/whatsapp.svg";
 import {
   Accordion,
   AccordionContent,
@@ -317,7 +318,7 @@ const TourDetail = () => {
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2 w-full bg-[#25D366] text-white py-5 rounded-xl font-bold hover:brightness-110 shadow-button transition-all duration-300 transform hover:-translate-y-1"
                     >
-                      <MessageCircle className="w-6 h-6" /> Inquire via WhatsApp
+                      <img src={whatsappIcon} alt="WhatsApp" className="w-6 h-6" /> Inquire via WhatsApp
                     </a>
                     <Link
                       to="/contact"

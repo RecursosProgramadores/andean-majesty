@@ -4,6 +4,8 @@ import { Menu, X, Phone, ChevronDown, Mail, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import LanguageSwitcher from "./LanguageSwitcher";
 import logo from "@/assets/logos/logo.png";
+import whatsappIcon from "@/assets/logos/whatsapp.svg";
+import facebookIcon from "@/assets/logos/facebook.svg";
 
 interface NavItem {
   label: string;
@@ -17,10 +19,10 @@ const navLinks: NavItem[] = [
     label: "Tour Packages",
     to: "/tours",
     submenu: [
-      { label: "Peru Tours", to: "/tours?country=peru" },
-      { label: "Ecuador Tours", to: "/tours?country=ecuador" },
-      { label: "Bolivia Tours", to: "/tours?country=bolivia" },
-      { label: "Chile Tours", to: "/tours?country=chile" },
+      { label: "Peru Tours", to: "/tours?country=Peru" },
+      { label: "Ecuador Tours", to: "/tours?country=Ecuador" },
+      { label: "Bolivia Tours", to: "/tours?country=Bolivia" },
+      { label: "Chile Tours", to: "/tours?country=Chile" },
     ]
   },
   {
@@ -32,7 +34,16 @@ const navLinks: NavItem[] = [
       { label: "Responsible Travel", to: "/about/responsible-travel" },
     ]
   },
-  { label: "Destinations", to: "/destinations" },
+  {
+    label: "Destinations",
+    to: "/destinations/peru",
+    submenu: [
+      { label: "Peru", to: "/destinations/peru" },
+      { label: "Ecuador", to: "/destinations/ecuador" },
+      { label: "Bolivia", to: "/destinations/bolivia" },
+      { label: "Chile", to: "/destinations/chile" },
+    ]
+  },
   { label: "Blog", to: "/blog" },
   { label: "Contact", to: "/contact" },
 ];
@@ -58,10 +69,13 @@ const Navbar = () => {
             <Phone className="w-3 h-3" /> +51 984 509 207
           </a>
           <a href="https://wa.me/51984509207" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-white transition-colors">
-            <MessageCircle className="w-3 h-3 text-[#25D366]" /> WhatsApp Agent
+            <img src={whatsappIcon} alt="WhatsApp" className="w-3.5 h-3.5" /> WhatsApp Agent
           </a>
           <a href="mailto:leadingperu@gmail.com" className="flex items-center gap-1.5 hover:text-white transition-colors">
             <Mail className="w-3 h-3" /> leadingperu@gmail.com
+          </a>
+          <a href="https://www.facebook.com/Machupicchutraveltour" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-white transition-colors">
+            <img src={facebookIcon} alt="Facebook" className="w-3.5 h-3.5 brightness-0 invert" /> Facebook
           </a>
         </div>
       </div>

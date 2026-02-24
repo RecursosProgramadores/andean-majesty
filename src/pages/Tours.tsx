@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { MapPin, Filter, X } from "lucide-react";
@@ -17,6 +17,16 @@ const Tours = () => {
   const [duration, setDuration] = useState("All");
   const [type, setType] = useState("All");
   const [showFilters, setShowFilters] = useState(false);
+
+  // Sync state with query parameters
+  useEffect(() => {
+    const countryParam = searchParams.get("country");
+    if (countryParam && countries.includes(countryParam)) {
+      setCountry(countryParam);
+    } else if (!countryParam) {
+      setCountry("All");
+    }
+  }, [searchParams]);
 
   const filtered = useMemo(() => {
     return tours.filter((t) => {
