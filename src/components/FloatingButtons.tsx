@@ -7,7 +7,7 @@ const FloatingButtons = () => {
       {/* Phone - Left Side */}
       <div className="fixed bottom-6 left-6 z-50">
         <motion.a
-          href="tel:+51941345282"
+          href="tel:+51984509207"
           animate={{ y: [0, -6, 0] }}
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
           className="w-14 h-14 rounded-full bg-[#e6c64f] flex items-center justify-center shadow-luxury hover:scale-110 transition-transform group"
@@ -24,7 +24,7 @@ const FloatingButtons = () => {
       {/* WhatsApp - Right Side */}
       <div className="fixed bottom-6 right-6 z-50">
         <motion.a
-          href="https://wa.me/51941345282?text=Hi!%20I'm%20interested%20in%20a%20luxury%20tour%20to%20Machu%20Picchu"
+          href="https://wa.me/51984509207?text=Hi!%20I'm%20interested%20in%20a%20luxury%20tour%20to%20Machu%20Picchu"
           target="_blank"
           rel="noopener noreferrer"
           animate={{ y: [0, -6, 0] }}

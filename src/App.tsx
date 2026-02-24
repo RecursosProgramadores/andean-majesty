@@ -7,7 +7,7 @@ import Index from "./pages/Index";
 import Tours from "./pages/Tours";
 import TourDetail from "./pages/TourDetail";
 import About from "./pages/About";
-import Gallery from "./pages/Gallery";
+import Categorias from "./pages/Categorias";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import Team from "./pages/Team";
@@ -31,7 +31,7 @@ const App = () => (
           <Route path="/about/team" element={<Team />} />
           <Route path="/about/social-action" element={<SocialAction />} />
           <Route path="/about/responsible-travel" element={<ResponsibleTravel />} />
-          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/destinations" element={<Categorias />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />

@@ -21,8 +21,10 @@ import { bolivia7 } from "./bolivia/bolivia-7";
 import { bolivia14 } from "./bolivia/bolivia-14";
 import { bolivia15 } from "./bolivia/bolivia-15";
 
-// Chile Tours (Placeholder)
-import { chileTours } from "./chile/chile";
+// Chile Tours
+import { chile16 } from "./chile/chile-16";
+import { chile17 } from "./chile/chile-17";
+import { chile18 } from "./chile/chile-18";
 
 export { type Tour } from "./types";
 
@@ -33,13 +35,13 @@ export const tours: Tour[] = [
   ecuador8, ecuador9,
   peru10, peru11, peru12, peru13,
   bolivia14, bolivia15,
-  ...chileTours
+  chile16, chile17, chile18
 ];
 
 export const destinations = [
   { name: "Peru", description: "Machu Picchu, Cusco, Amazon & more", tourCount: 9 },
   { name: "Bolivia", description: "Uyuni Salt Flats & La Paz", tourCount: 3 },
-  { name: "Chile", description: "Atacama Desert & Patagonia", tourCount: 0 },
+  { name: "Chile", description: "Atacama Desert & Patagonia", tourCount: 3 },
   { name: "Ecuador", description: "Galápagos Islands & Quito", tourCount: 3 },
 ];
 

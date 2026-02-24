@@ -1,35 +1,107 @@
 import { Tour } from "../types";
 import destPeru from "@/assets/dest-peru.jpg";
+import heroMachuPicchu from "@/assets/hero-machu-picchu.jpg";
+import tourTiticaca from "@/assets/tour-titicaca.jpg";
+import tourLima from "@/assets/tour-peru-lima.png";
+import tourPisac from "@/assets/tour-peru-pisac.png";
+import tourMoray from "@/assets/tour-peru-moray.png";
+import tourMachuPicchuDetail from "@/assets/tour-peru-machupicchu.png";
+import tourCuscoDetail from "@/assets/tour-peru-cusco.png";
+import tourSacredValleyDetail from "@/assets/tour-peru-sacred-valley.png";
 
 export const peru4: Tour = {
     id: "4",
     title: "Desert Mysteries to Inca Legends Nazca Lines & Cusco",
     slug: "desert-mysteries-nazca-cusco",
+    subtitle: "Lima, Ica, Paracas, Nazca, Cusco, Sacred Valley",
     country: "Peru",
     destinations: ["Lima", "Ica", "Paracas", "Nazca", "Cusco", "Sacred Valley"],
     duration: 8,
+    nights: 7,
     price: 3690,
     image: destPeru,
+    gallery: [destPeru, heroMachuPicchu, tourTiticaca],
     shortDescription: "Solve the riddles of the past from the ancient lines in the sand to the stone citadels of the cloud forest.",
-    description: "Experience the incredible contrasts of Peru. Flight over the mysterious Nazca Lines, boat through the 'Galapagos of Peru' in Paracas, and ascend to the legendary Incan capital of Cusco. This 8-day luxury tour combines coastal wonders with Andean majesty.",
-    type: ["Luxury", "Culture", "Adventure"],
+    styleSummary: "Aventura, Misterio, Arqueológico, Lujo",
+    description: "Wander through narrow streets, elegant plazas, and historic colonial churches along the shores of the Pacific Ocean in Lima. Then, take to the skies for a breathtaking flight over the mysterious Nazca Lines, where you will witness their extraordinary shapes carved into the desert thousands of years ago. Yet the desert holds more than ancient enigmas — feel the thrill of adventure as you surf down towering sand dunes and ride across golden landscapes in a dune buggy.\n\nYour journey continues in Cusco, the legendary “Rome of America,” where majestic Inca palaces, colonial churches, and impressive stone fortresses rise high in the Andes. Explore the enchanting Sacred Valley and culminate your adventure at the awe-inspiring Machu Picchu, one of the world’s most extraordinary archaeological treasures.\n\nOn our “Desert Mysteries to Inca Legends Nazca Lines & Cusco” tour, you will experience Lima’s historic center in complete privacy and comfort, staying at carefully selected luxury hotels and dining at exceptional restaurants. In addition to your Nazca flight, enjoy thrilling desert activities such as sandboarding and dune buggy rides.\n\nAs with all our journeys, every detail can be tailored to your preferences — from the finest accommodations to personalized services — ensuring a seamless and unforgettable travel experience.",
+    type: ["Luxury", "Adventure", "Arqueológico", "Cultural"],
+    badge: "Mystery & Adventure",
     included: [
-        "Private flight over Nazca Lines",
-        "Luxury desert camp experience in Ica",
-        "Private yacht tour to Ballestas Islands",
-        "All entrance fees and private guides",
-        "First-class air-conditioned private transfers",
-        "Accommodation in world-class boutique hotels",
-        "Domestic flight Cusco - Lima"
+        "1 night in Lima, 1 night in Paracas, 1 night in Lima, 2 nights in Sacred Valley, 2 nights in Cusco",
+        "All Excursions and Tours In Private Service",
+        "All transfers and transportation with a private van",
+        "A Professional Driver",
+        "All entrance tickets to all the attractions mentioned in the program",
+        "Round trip VISTADOME train ticket to Machu Picchu",
+        "Round trip bus ticket to Machu Picchu",
+        "Entrance tickets to Machu Picchu",
+        "1/2-hour flight tour over the mysterious Nazca Lines",
+        "See the most fascinating figures: monkey, hummingbird, condor, dog, etc",
+        "Meals as indicated (B = Breakfast, L = Lunch, D = Dinner)",
+        "A Professional English-Speaking Tour Guide",
+        "Personal attention"
+    ],
+    notIncluded: [
+        "Airfare",
+        "Lunches or dinner (unless otherwise specified)",
+        "Tips"
     ],
     itinerary: [
-        { day: 1, title: "Arrival in Lima", description: "Private airport pickup and luxury hotel check-in." },
-        { day: 2, title: "Coastal Journey to Paracas", description: "Drive south in a private luxury vehicle. Sunset dinner by the sea." },
-        { day: 3, title: "Ballestas Islands & Nazca Flight", description: "Private boat tour to spot penguins and sea lions. Afternoon flight over the desert lines." },
-        { day: 4, title: "Huacachina Oasis & Vineyards", description: "Dune buggy adventure in the dunes. Private wine and pisco tasting at a colonial vineyard." },
-        { day: 5, title: "Fly to the Inca Capital", description: "Morning return to Lima for your flight to Cusco. Relaxation and acclimatization." },
-        { day: 6, title: "The Imperial City", description: "Private guided tour of Cusco's cathedral, Sun Temple, and nearby fortresses." },
-        { day: 7, title: "Sacred Valley Exploration", description: "Explore the salt mines of Maras and the circular terraces of Moray." },
-        { day: 8, title: "Final Farewell", description: "Leisure morning in Cusco before your transfer to the airport." }
+        {
+            day: 1,
+            title: "Peru – Lima",
+            image: tourLima,
+            summary: "Arrive at your hotel in Lima after your international flight and recharge your energy for your city tour!",
+            description: "ARRIVE AT YOUR HOTEL IN LIMA AFTER YOUR INTERNATIONAL FLIGHT AND RECHARGE YOUR ENERGY FOR YOUR CITY TOUR!\n\nYour dream trip to Peru has come! We know you want to get to your hotel to rest after a long flight and enjoy your dreams. Well, Machu Travel Peru makes it simple for you! Once you arrive at the International Lima airport, your host will wait for you at the international arrival zone with a sign indicating your name. He'll welcome you and transfer you to the Lima hotel of your preference in the beautiful Peruvian capital. Of course, he'll also give recommendations of the best restaurants close to your hotel to enjoy the best Peruvian cuisine on your own.\n\nYour local guide will pick you up from your hotel at a specific time to start your unforgettable city tour of Lima's colonial and modern zones.\n\nYour tour will begin by visiting a fascinating boulevard called Jiron de la Unión that leads to Plaza de Armas, the main square of French influence. Afterward, your guide will lead you through beautiful San Martin Square, where you can appreciate enchanting buildings of French styles surrounding the square. Following this, we will visit the Monastery of San Francisco, where you can see beautiful religious painting collections, sculptures, and the enigmatic catacombs, a World Heritage-listed site! This monastery is renowned for its Spanish baroque architecture. The first cemetery of Lima, the catacombs, is hidden underneath this monastery’s floors.\n\nAt the end of the day, we’ll drop you off at your hotel for a well-deserved rest.\n\nIn the evening, we recommend you enjoy a delicious dinner by yourself at one of the world-renowned restaurants in Lima, also known as “The Capital of the Peruvian Gastronomy,” like Astrid & Gaston, Central, Maido, or La Mar. The decision is always yours!\n\nTomorrow will be a big day!\n\n• Overnight in Lima.\n• Included meals: None."
+        },
+        {
+            day: 2,
+            title: "Lima - Nazca",
+            image: tourLima,
+            summary: "Fly over the mysterious Nazca Lines and slide over the desert by practicing sandboarding or buggy sand.",
+            description: "FLY OVER THE MYSTERIOUS NAZCA LINES AND SLIDE OVER THE DESERT BY PRACTICING SANDBOARDING OR BUGGY SAND\n\nToday, a big world mystery is about to be revealed by you, the Nazca Lines! The morning can be enjoyed with a delicious breakfast provided by your hotel. Later, our MACHU TRAVEL PERU host will pick you up and take you directly to Paracas bay in a private transfer.\n\nIn Paracas, you will be greeted by your dedicated local host, who will personally escort you to the Pisco Aerodrome. During the drive, you will receive a clear and detailed explanation of the Nazca Lines overflight experience, outlining each step of the activity. Upon arrival at the aerodrome, the aircraft crew will provide essential safety instructions. Just a few minutes later, you will be airborne, ready to enjoy this extraordinary adventure.\n\nIn a few minutes, you will find yourself ascending in a circular path, gradually discovering the fantastic Nazca Lines. Prepare your camera because you will get unique photos of these indecipherable geoglyphs of monkeys, hummingbirds, trees, parrots, astronauts, dogs, condors, and other geoglyphs. All these were graphed by a pre-Columbian culture just as mysterious between 1 and 600 A.D. Their purpose is unknown. Still, many theories propose they were part of a giant astronomical calendar. This is one of life’s unique experiences, and now it's at your fingertips!\n\nAfter your dream flight, your local host will welcome you again in the aerodrome, and, depending on your free time, he’ll recommend restaurants where you will enjoy a well-deserved meal on your own. The decision is always yours.\n\nFollowing, you’ll be taken to the beautiful Huacachina Oasis, in nearby Ica city, lined with imposing palm trees, this paradise blue-green oasis is also surrounded by giant dunes on which you can have a wild and unforgettable sand buggy experience, crossing deserts at full speed and climbing steep sandy slopes under a stunning sun and a completely blue sky. Without mentioning the extra activity of sand-boarding, which consists of sliding over steep slopes of giant dunes, from the top to the down, similar to surf. Simply wonderful!\n\nAfter this experience, you will return to your hotel in Paracas at sunset, where you will take a deserved rest. Take a relaxing shower in your room or maybe enjoy a tasty dinner on your own.\n\nNOTE: The overflight in Nazca Lines requires 2 persons as a minimum per departure. Please contact our travel advisors about the single-passenger option.\n\n• Overnight in Paracas.\n• Included meals: Breakfast."
+        },
+        {
+            day: 3,
+            title: "Nazca – Lima",
+            image: tourLima,
+            summary: "Navigate among the fantastic Ballestas Islands and discover its rich sea life.",
+            description: "NAVIGATE AMONG THE FANTASTIC BALLESTAS ISLANDS AND DISCOVER ITS RICH SEA LIFE\n\nAre you ready to see some marine wildlife, up, close and personal? Well, today, early in the morning, a fresh and varied breakfast will be waiting for you in the dining room of your hotel. Afterward, your host will come to your hotel to drive you to the Chaco port, where you will board a speedboat, which will take you to explore the fantastic Ballestas Islands.\n\nHead out to sea and discover an ancient Candelabro (candle holder) geoglyph on the slopes of a gigantic coastal dune in the Paracas National Reserve. Nobody knows its origin and function, but historians agree, it doesn't belong to the Nazca Lines.\n\nThen, navigate among unique rock formations nestled between the deep sea and the deserted coast and be amazed by the sea lions, seals, guano birds, pelicans, and even penguins resting on these rocky islets in their natural habitat, without meshes and glass in between you. Completely fascinating!\n\nIn the afternoon, once the speedboat has docked in the local port and the tour has ended, your host will transfer you back to your hotel, where you can have a delicious lunch on your own and enjoy some free time.\n\nAt the scheduled time, your host will bid you farewell, and you will be transferred to Lima in your private vehicle, which will take you directly to your hotel in the capital.\n\nUpon arrival, you may relax, enjoy the hotel’s facilities, or indulge in a delightful dinner at your leisure. This is an ideal moment to unwind and recharge for the extraordinary experiences awaiting you tomorrow.\n\n• Overnight in Lima.\n• Included meals: Breakfast."
+        },
+        {
+            day: 4,
+            title: "Lima - Cusco - Sacred Valley",
+            image: tourPisac,
+            summary: "Welcome to Cusco! Explore the Textile House Museum and its living traditions and Pisac Inca neighborhood.",
+            description: "WELCOME TO CUSCO! EXPLORE THE TEXTILE HOUSE MUSEUM AND ITS LIVING TRADITIONS AND PISAC INCA NEIGHBORHOOD\n\nToday, your adventure in the Andean highlands is about to begin! After enjoying a satisfying breakfast at your hotel, your host will accompany you to the Lima airport, where you’ll take a comfortable flight to Cusco, the ancient Imperial Inca City.\n\nYou can watch the Pacific Ocean merge with the blue skies through your plane window, giving way to vast dunes that, in turn, rise and then collapse against the slopes of the towering Andes mountains once conquered many centuries ago by the impressive Inca civilization.\n\nOn your arrival in Cusco, your local host will be waiting for you in the national arrivals area of Cusco Airport, holding a sign with your name. “It’s not altitude sickness… it’s the feeling of being close to heaven,” is a phrase he’ll often say about the altitude. To help you avoid altitude sickness, we’ll head directly from Cusco Airport to the Sacred Valley of the Incas, located 600 meters below Cusco. But please don’t worry you’ll get to enjoy all the wonderful sights of Cusco at the end of your journey, once your body is perfectly acclimatized to the altitude.\n\nOn the way to the Sacred Valley of the Incas we will visit an exceptional Textile House Museum, where you can see the four types of South American camelids raised in captivity: llamas, alpacas, guanacos, and vicuñas. You can feed them and learn how to tell them apart. Local artisans will show you how they use the ancient techniques of their Inca ancestors to transform the delicate fibers of these animals, especially alpacas and vicuñas, into beautiful and colorful garments. You can also see the creation of multicolored belts, finely woven blankets, and exquisitely embroidered textiles. To complete the experience, a guided tour of the museum will immerse you in the fascinating history of pre-Inca cultures and their textile legacy.\n\nThen, we’ll continue descending through the valley slope until we reach a spectacular Inca archaeological site over a hill called Pisac, with magnificent terraced fields on its hill slopes, among Inca enclosures, squares, temples, and even an Inca cemetery! Your first contact with a rich Andean past! Descending into the modern town, we will lose ourselves among the colored stands of the famous Pisac traditional market, where we will be fascinated by its beautiful handicrafts made by local people, like fabric crafts, sculptures, jewelry, and paintings with Andean thematic.\n\nNext, we will visit a charming restaurant nestled in the beautiful landscapes of the Sacred Valley to enjoy a delicious lunch made from local ingredients, all included in your program. You can choose the restaurant in advance, with the advice of your travel consultants.\n\nFinally, we’ll go to your hotel in the middle of the spectacular scenery of the Sacred Valley, and you can enjoy a delicious dinner here, on your own. A well-deserved sleep is guaranteed tonight!\n\n• Overnight in Sacred Valley.\n• Included meals: Breakfast and Lunch."
+        },
+        {
+            day: 5,
+            title: "Sacred Valley",
+            image: tourMoray,
+            summary: "Explore the last Inca fortress of Ollantaytambo, the Inca salt mines of Maras, and the circular terraces of Moray.",
+            description: "EXPLORE THE LAST INCA FORTRESS OF OLLANTAYTAMBO, THE INCA SALT MINES OF MARAS, AND THE CIRCULAR TERRACES OF MORAY\n\nThe Sacred Valley still has treasures to discover, and you will not miss a thing! This day assures an unforgettable trip in a perfect climate. The Sacred Valley is known for its charming climate 365 days a year. First, you'll enjoy a delicious breakfast at your luxury hotel. Then, with your guide, you will begin your adventure through the Sacred Valley of the Incas.\n\nDiscover Ollantaytambo, a fortress that was the last Inca refuge in Andean lands during the Spanish invasion. Wander among its narrow alleys, temples, enclosures, and squares of well-carved, perfectly fitted, stone architecture. This incredible experience will be accompanied by stories and myths that your guide will tell you about the place. One notable mention, the fantastic ancient love story legend about an Inca military General and a beautiful Princess, the daughter of the Inca emperor Pachacutec.\n\nNext, you will go to a charming restaurant in the middle of the beautiful landscapes of the Sacred Valley, to enjoy a delicious and exclusive lunch made from local ingredients. As if this were not enough, the variety of flavors and colors in its menu, dishes, and drinks will surprise you.\n\nThen, our next stop will be the white slopes of Maras. There, you will enjoy the brightness of 2,000 small Inca salt wells that are still used by local people today to provide themselves with salt. By the way, the Maras salt is recognized worldwide as being perfect for grills and barbecues.\n\nMoving on, your guide will transfer up to Moray, where you'll be fascinated by a series of circular terraces, in the form of rings, that go into the earth's deeps. These circular terraces were used as an Incan laboratory to acclimatize crops. They sowed a specific type of seed in each circular terrace, from the smallest and deepest ring to the largest, to see the quality of the harvest they obtained.\n\nFinally, we’ll return to the hotel for a deserved rest, you can take a relaxing shower or, maybe, enjoy a fantastic dinner on your own.\n\n• Overnight in Sacred Valley.\n• Included meals: Breakfast and Lunch."
+        },
+        {
+            day: 6,
+            title: "Sacred Valley - Machu Picchu - Cusco",
+            image: tourMachuPicchuDetail,
+            summary: "Conquest the most incredible Inca citadel, Machu Picchu, on an unforgettable day!",
+            description: "CONQUEST THE MOST INCREDIBLE INCA CITADEL, MACHU PICCHU, ON AN UNFORGETTABLE DAY!\n\nThe day to conquer Machu Picchu has arrived! After a delicious breakfast in your hotel, your host will take you to Ollantaytambo train station to dispatch you on a charming and comfortable train heading to Aguas Calientes, the modern town of Machu Picchu. The magical train trip will last one and a half hours, crossing the spectacular Peruvian jungle, always accompanied by the singing of exotic birds, leafy undergrowth, and the Vilcanota river that will follow the train's movement, like a snake on the lookout for its prey!\n\nOnce you arrive at Aguas Calientes train station, your local guide will await you at the arrivals gate. With your guide, you’ll go to the bus station to take a “CONSETTUR” bus heading to the top of a mountain where the Machu Picchu citadel is located. After 35 minutes of the bus trip, the bus will drop you at the same entrance gate to Machu Picchu.\n\nThen, you will enter the famous Inca citadel to start living the magic there! You can get lost between enclosures, squares, temples, and stone alleys perfectly carved and fitted. Exploring for two hours the mysteries and magic of an Inca citadel that continues to amaze the world with its beauty. Of course, as a soundtrack, you will listen to the stories of its construction, inhabitants, and function from your private guide.\n\nOnce the tour is over, but not before taking your dream photo of Machu Picchu, your tour guide will dispatch you in a CONSETTUR bus returning to Aguas Calientes town. There you’ll enjoy a fantastic lunch included in your program in one of the best restaurants in the zone.\n\nNext, you’ll have to go to the Aguas Calientes train station to take your train to return to Cusco. There, you will take a comfortable train back to Ollantaytambo or Poroy train stations. Whatever station you arrive at, another member of our staff will wait for you to transfer to the Cusco Hotel, where you can enjoy a delicious dinner on your own, before taking a relaxing shower and enjoying a well-deserved rest.\n\nDon't worry; as you can see, you will always be assisted at any departure or arrival point!\n\nOPTIONAL: If you want to continue enjoying Machu Picchu, this package, like all the others, can be fully customized by adding a night in Aguas Calientes. So, on the following day, you'll be able to enjoy a second visit to the enigmatic Inca citadel or hike to nearby mountains like Huayna Picchu and get fabulous photos of Huayna Picchu. Just tell us your requirements, it’s as easy as that!\n\n• Overnight in Cusco.\n• Included meals: Breakfast and Lunch."
+        },
+        {
+            day: 7,
+            title: "Cusco",
+            image: tourCuscoDetail,
+            summary: "Explore the magical city of Cusco, the enigmatic heart of the Inca Empire.",
+            description: "EXPLORE THE MAGICAL CITY OF CUSCO, THE ENIGMATIC HEART OF THE INCA EMPIRE\n\nAre you ready to discover the enchanting capital of the Inca Empire? Welcome to Cusco, a city where history, culture, and ancient mysteries blend seamlessly with everyday life. After enjoying a comforting and delicious breakfast at your hotel, your guide will be ready to transport you back in time.\n\nFirst, you’ll explore the Inca fortress of Sacsayhuaman, with its giant rocks perfectly fitted into its structure. The tour will continue by visiting the Qenqo Inca ceremonial center with its ancient sacrifice vestiges. Then, the Inca military barrack, Puca Pucara, will fascinate you with its beautiful views of Cusco. Following, your guide will show you the retreat place of the Inca sovereign called Tambomachay, with its beautiful water fonts, where the sovereign spent long periods resting and hunting.\n\nThen, we will return to the Cusco Center to lose ourselves in its charming stone alleys by appreciating the Renaissance architecture of the Cathedral of Cusco and its famous painting collection of a unique art style called \"Escuela Cusqueña\".\n\nLater, your guide will lead you to the Qoricancha temple, located a short distance from the Cathedral, where you will be fascinated by the mix of Inca and Spanish architectural styles, besides some original remains of the Inca temples inside it.\n\nFinally, your tour will end in the main square. You might enjoy a nice lunch or dinner on your own in one of the nearby restaurants, or we can arrange transport to drop you off at your hotel. Whatever your decision, tell your guide what you would like to do!\n\n• Overnight in Cusco.\n• Included meals: Breakfast."
+        },
+        {
+            day: 8,
+            title: "Cusco - Lima",
+            image: tourSacredValleyDetail,
+            summary: "Saying goodbye to such beautiful moments does not have to be complicated.",
+            description: "SAYING GOODBYE TO SUCH BEAUTIFUL MOMENTS DOES NOT HAVE TO BE COMPLICATED\n\nSaying goodbye to a beautiful place doesn't have to be sad. That is why, at Machu Travel Peru, we want to save you this trouble. You can enjoy one final, delicious and comforting breakfast fully included in your hotel reservation.\n\nThen, we will accompany you to the Cusco airport to say goodbye and send you on your flight to Lima.\n\nWhat do you think about our \"Fly Over the Mysterious Nazca Lines on the Way to Cusco\" tour? Do you have any extra requests or questions? Please don’t hesitate to write to us. We will always be attentive to personalize your dreams in Peru at your desire!\n\nNOTE: This program will allow you to visit Lima, Paracas, the Nazca Lines, the Ballestas Islands, Huacachina, Cusco, the Sacred Valley, Pisac, Moray, Salt Mine of Maras, Ollantaytambo and Machu Picchu. Additionally, you can add more exciting day tours in Cusco or another destination in Peru. Please see our package list for more options.\n\n• Included meals: Breakfast."
+        }
     ]
 };

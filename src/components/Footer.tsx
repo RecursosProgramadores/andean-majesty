@@ -53,11 +53,11 @@ const Footer = () => {
                   <Mail className="w-4 h-4 shrink-0 group-hover:scale-110 transition-transform" />
                   leadingperu@gmail.com
                 </a>
-                <a href="tel:+18001234567" className="flex items-center gap-3 text-white/50 hover:text-primary transition-colors text-xs font-medium group">
+                <a href="tel:+51984509207" className="flex items-center gap-3 text-white/50 hover:text-primary transition-colors text-xs font-medium group">
                   <Phone className="w-4 h-4 shrink-0 group-hover:scale-110 transition-transform" />
-                  USA/Canada: +1 800 123 4567
+                  +51 984 509 207
                 </a>
-                <a href="https://wa.me/51941345282" className="flex items-center gap-3 text-[#25D366] hover:brightness-110 transition-all text-sm font-bold group">
+                <a href="https://wa.me/51984509207" className="flex items-center gap-3 text-[#25D366] hover:brightness-110 transition-all text-sm font-bold group">
                   <MessageCircle className="w-5 h-5 shrink-0 group-hover:rotate-12 transition-transform" />
                   WhatsApp Travel Agent
                 </a>

@@ -73,7 +73,7 @@ const Index = () => {
               <ArrowRight className="w-5 h-5" />
             </a>
             <a
-              href="https://wa.me/51941345282?text=Hi!%20I'm%20interested%20in%20a%20luxury%20tour%20to%20Machu%20Picchu"
+              href="https://wa.me/51984509207?text=Hi!%20I'm%20interested%20in%20a%20luxury%20tour%20to%20Machu%20Picchu"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 border-2 border-background/50 text-background px-8 py-4 rounded-lg text-lg font-semibold hover:bg-background/10 transition-all"
@@ -339,8 +339,8 @@ const Index = () => {
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <motion.div {...fadeInUp} className="text-center mb-12">
-            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground">Travel Gallery</h2>
-            <p className="mt-3 text-muted-foreground">A glimpse of the extraordinary experiences awaiting you.</p>
+            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground">Explore Our Destinations</h2>
+            <p className="mt-3 text-muted-foreground">A glimpse of the extraordinary experiences awaiting you in the heart of South America.</p>
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4">
             {galleryImages.slice(0, 8).map((img, i) => (
@@ -350,8 +350,8 @@ const Index = () => {
             ))}
           </div>
           <motion.div {...fadeInUp} className="text-center mt-8">
-            <Link to="/gallery" className="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
-              View Full Gallery <ArrowRight className="w-4 h-4" />
+            <Link to="/destinations" className="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
+              View Destination Details <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
         </div>
@@ -373,7 +373,7 @@ const Index = () => {
               Get a Free Quote
             </Link>
             <a
-              href="https://wa.me/51941345282?text=Hi!%20I'm%20interested%20in%20a%20luxury%20tour%20to%20Machu%20Picchu"
+              href="https://wa.me/51984509207?text=Hi!%20I'm%20interested%20in%20a%20luxury%20tour%20to%20Machu%20Picchu"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-secondary text-secondary-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-secondary/90 transition-all"

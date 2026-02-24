@@ -4,6 +4,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Clock, Check, X, ArrowLeft, ArrowRight, MessageCircle, Calendar, Star, Phone } from "lucide-react";
 import Layout from "@/components/Layout";
 import { tours } from "@/data/tours";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const TourDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -45,7 +51,7 @@ const TourDetail = () => {
   }
 
   const whatsappMessage = encodeURIComponent(`Hi! I'm interested in the ${tour.title} tour. Obtain my personalized quote.`);
-  const phoneNumber = "51941345282";
+  const phoneNumber = "51984509207";
 
   // Find the current active day data
   const activeDayData = tour.itinerary.find(d => d.day === activeDay) || tour.itinerary[0];
@@ -146,85 +152,60 @@ const TourDetail = () => {
 
               {/* Detailed Experience (Stacked Layout for maximum impact) */}
               <div id="detailed-experience" className="space-y-10 bg-background/50 rounded-[3rem] p-6 lg:p-12 border border-border/40 shadow-sm scroll-mt-24">
-                <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-8 pb-10 border-b border-border/60">
-                  <div className="space-y-1">
-                    <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground tracking-tighter">Detailed Experience</h2>
-                    <p className="text-muted-foreground text-[16px] font-medium italic">Immerse yourself in every moment of your journey.</p>
-                  </div>
-                  {/* Day Selector (Tabs) - More compact and luxury style */}
-                  <div className="flex flex-wrap gap-1.5">
-                    {tour.itinerary.map((day) => (
-                      <button
-                        key={day.day}
-                        onClick={() => setActiveDay(day.day)}
-                        className={`px-4 py-3 rounded-xl text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300 border ${activeDay === day.day
-                          ? "bg-foreground text-background border-foreground shadow-xl scale-105"
-                          : "bg-white/80 text-foreground/40 border-border/50 hover:border-foreground/30 hover:text-foreground/70"
-                          }`}
-                      >
-                        Día {day.day}
-                      </button>
-                    ))}
-                  </div>
+                <div className="space-y-1 pb-10 border-b border-border/60">
+                  <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground tracking-tighter">Detailed Experience</h2>
+                  <p className="text-muted-foreground text-[16px] font-medium italic">Immerse yourself in every moment of your journey.</p>
                 </div>
 
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={activeDay}
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -30 }}
-                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                    className="space-y-10"
-                  >
-                    {/* Event Content */}
-                    <div className="space-y-8">
-                      <div className="flex items-center gap-6">
-                        <div className="bg-[#1B262C] text-white w-14 h-14 rounded-2xl flex items-center justify-center font-bold text-xl shadow-2xl shrink-0">
-                          {activeDay}
-                        </div>
-                        <h3 className="font-heading text-2xl md:text-4xl font-black text-foreground leading-[1.1] tracking-tighter uppercase">
-                          {activeDayData.title}
-                        </h3>
-                      </div>
-
-                      <div className="space-y-6">
-                        {/* All Caps Highlight - Always at the top */}
-                        <p className="font-bold text-foreground text-xl md:text-2xl uppercase tracking-tight leading-snug border-l-8 border-primary pl-8 py-4 bg-primary/5 rounded-r-3xl mb-10">
-                          {highlight}
-                        </p>
-
-                        <div className="block">
-                          {/* Image Box - Floated for magazine wrap on desktop */}
-                          {activeDayData.image && (
-                            <motion.div
-                              initial={{ opacity: 0, scale: 0.98 }}
-                              animate={{ opacity: 1, scale: 1 }}
-                              className="rounded-[2rem] overflow-hidden shadow-2xl group relative border-4 border-white w-full lg:w-[45%] lg:float-right lg:ml-10 lg:mb-8 mb-10 aspect-video lg:aspect-[4/3] z-10"
-                            >
-                              <img
-                                src={activeDayData.image}
-                                alt={activeDayData.title}
-                                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                              />
-                              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-6 pt-12 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                <p className="text-white text-xs font-bold uppercase tracking-widest">{activeDayData.title}</p>
-                              </div>
-                            </motion.div>
-                          )}
-
-                          {/* Main Body Text - Wraps around the image */}
-                          <div className="whitespace-pre-line text-foreground/80 font-normal leading-relaxed text-[17px] md:text-xl">
-                            {rest.join('\n\n')}
+                <Accordion type="single" collapsible className="w-full space-y-4">
+                  {tour.itinerary.map((dayData, idx) => {
+                    const [dayHighlight, ...dayRest] = dayData.description.split('\n\n');
+                    return (
+                      <AccordionItem
+                        key={idx}
+                        value={`day-${dayData.day}`}
+                        className="border border-border/40 rounded-2xl px-6 bg-white/50 overflow-hidden shadow-sm"
+                      >
+                        <AccordionTrigger className="hover:no-underline py-6">
+                          <div className="flex items-center gap-6 text-left">
+                            <div className="bg-[#1B262C] text-white w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg shadow-lg shrink-0">
+                              {dayData.day}
+                            </div>
+                            <h3 className="font-heading text-xl md:text-2xl font-bold text-foreground leading-tight tracking-tight uppercase">
+                              {dayData.title}
+                            </h3>
                           </div>
+                        </AccordionTrigger>
+                        <AccordionContent className="pb-8">
+                          <div className="space-y-8 pt-4">
+                            {/* All Caps Highlight */}
+                            <p className="font-bold text-foreground text-lg md:text-xl uppercase tracking-tight leading-snug border-l-4 border-primary pl-6 py-3 bg-primary/5 rounded-r-2xl">
+                              {dayHighlight}
+                            </p>
 
-                          {/* Clearfix for the container */}
-                          <div className="clear-both"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                </AnimatePresence>
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                              {/* Body Text */}
+                              <div className="whitespace-pre-line text-foreground/80 font-normal leading-relaxed text-[16px] md:text-lg">
+                                {dayRest.join('\n\n')}
+                              </div>
+
+                              {/* Day Image */}
+                              {dayData.image && (
+                                <div className="rounded-2xl overflow-hidden shadow-xl border-2 border-white aspect-video lg:aspect-square">
+                                  <img
+                                    src={dayData.image}
+                                    alt={dayData.title}
+                                    className="w-full h-full object-cover"
+                                  />
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    );
+                  })}
+                </Accordion>
               </div>
 
               {/* Tour Pricing */}
@@ -331,7 +312,7 @@ const TourDetail = () => {
 
                   <div className="space-y-4 relative z-10">
                     <a
-                      href={`https://wa.me/51941345282?text=${whatsappMessage}`}
+                      href={`https://wa.me/51984509207?text=${whatsappMessage}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2 w-full bg-[#25D366] text-white py-5 rounded-xl font-bold hover:brightness-110 shadow-button transition-all duration-300 transform hover:-translate-y-1"
@@ -376,7 +357,7 @@ const TourDetail = () => {
 
                 <div className="flex gap-2">
                   <a
-                    href={`https://wa.me/51941345282?text=${whatsappMessage}`}
+                    href={`https://wa.me/51984509207?text=${whatsappMessage}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 flex items-center justify-center bg-[#25D366] text-white rounded-xl font-bold text-base md:text-lg shadow-button hover:brightness-110 active:scale-95 transition-all duration-200 uppercase tracking-wide px-4 text-center"

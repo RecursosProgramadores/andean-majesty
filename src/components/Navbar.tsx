@@ -32,7 +32,7 @@ const navLinks: NavItem[] = [
       { label: "Responsible Travel", to: "/about/responsible-travel" },
     ]
   },
-  { label: "Gallery", to: "/gallery" },
+  { label: "Destinations", to: "/destinations" },
   { label: "Blog", to: "/blog" },
   { label: "Contact", to: "/contact" },
 ];
@@ -54,10 +54,10 @@ const Navbar = () => {
       {/* Top Bar */}
       <div className="bg-black text-[#e6c64f] text-[10px] py-1.5 hidden lg:block border-b border-[#e6c64f]/10">
         <div className="container mx-auto px-4 lg:px-8 flex justify-end gap-6 font-bold uppercase tracking-widest">
-          <a href="tel:+51941345282" className="flex items-center gap-1.5 hover:text-white transition-colors">
-            <Phone className="w-3 h-3" /> +51 941 345 282
+          <a href="tel:+51984509207" className="flex items-center gap-1.5 hover:text-white transition-colors">
+            <Phone className="w-3 h-3" /> +51 984 509 207
           </a>
-          <a href="https://wa.me/51941345282" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-white transition-colors">
+          <a href="https://wa.me/51984509207" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-white transition-colors">
             <MessageCircle className="w-3 h-3 text-[#25D366]" /> WhatsApp Agent
           </a>
           <a href="mailto:leadingperu@gmail.com" className="flex items-center gap-1.5 hover:text-white transition-colors">
@@ -123,7 +123,7 @@ const Navbar = () => {
               ))}
               <LanguageSwitcher />
               <a
-                href="https://wa.me/51941345282?text=Hi!%20I'm%20interested%20in%20a%20luxury%20tour%20to%20Machu%20Picchu"
+                href="https://wa.me/51984509207?text=Hi!%20I'm%20interested%20in%20a%20luxury%20tour%20to%20Machu%20Picchu"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-black text-[#e6c64f] px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-black/80 transition-all shadow-lg transform hover:-translate-y-0.5"
@@ -207,7 +207,7 @@ const Navbar = () => {
                   <LanguageSwitcher />
                 </div>
                 <a
-                  href="https://wa.me/51941345282?text=Hi!%20I'm%20interested%20in%20a%20luxury%20tour%20to%20Machu%20Picchu"
+                  href="https://wa.me/51984509207?text=Hi!%20I'm%20interested%20in%20a%20luxury%20tour%20to%20Machu%20Picchu"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-black text-[#e6c64f] px-5 py-4 rounded-xl text-md font-bold uppercase tracking-wider shadow-lg active:scale-95 transition-transform"

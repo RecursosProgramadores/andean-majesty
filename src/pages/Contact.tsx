@@ -97,7 +97,7 @@ const Contact = () => {
       `Budget range: ${form.budget || "Not specified"}\n` +
       `Special wishes: ${form.message}`
     );
-    window.open(`https://wa.me/51941345282?text=${msg}`, "_blank");
+    window.open(`https://wa.me/51984509207?text=${msg}`, "_blank");
     toast({ title: "Redirecting to WhatsApp", description: "Your travel designer will receive this immediately!" });
   };
 
@@ -195,11 +195,11 @@ const Contact = () => {
                 <div className="pt-8 border-t border-border">
                   <h3 className="font-heading text-xl font-bold mb-4">Need immediate help?</h3>
                   <div className="space-y-4">
-                    <a href="https://wa.me/51941345282" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group">
+                    <a href="https://wa.me/51984509207" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group">
                       <div className="w-10 h-10 rounded-full bg-[#25D366]/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                         <MessageCircle className="w-5 h-5 text-[#25D366]" />
                       </div>
-                      <span className="font-medium">+51 941 345 282</span>
+                      <span className="font-medium">+51 984 509 207</span>
                     </a>
                     <a href="mailto:leadingperu@gmail.com" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group">
                       <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">

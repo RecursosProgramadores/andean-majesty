@@ -1,39 +1,127 @@
 import { Tour } from "../types";
 import destAmazon from "@/assets/dest-amazon.jpg";
+import destPeru from "@/assets/dest-peru.jpg";
+import heroMachuPicchu from "@/assets/hero-machu-picchu.jpg";
+import tourLima from "@/assets/tour-peru-lima.png";
+import tourPisac from "@/assets/tour-peru-pisac.png";
+import tourMoray from "@/assets/tour-peru-moray.png";
+import tourMachuPicchuDetail from "@/assets/tour-peru-machupicchu.png";
+import tourCuscoDetail from "@/assets/tour-peru-cusco.png";
+import tourSacredValleyDetail from "@/assets/tour-peru-sacred-valley.png";
 
 export const peru5: Tour = {
     id: "5",
     title: "Machu Picchu and the Amazon River Peruvian Adventure",
     slug: "machu-picchu-amazon-river-adventure",
+    subtitle: "Lima, Cusco, Sacred Valley, Machu Picchu, Iquitos",
     country: "Peru",
     destinations: ["Lima", "Cusco", "Sacred Valley", "Machu Picchu", "Iquitos"],
     duration: 11,
+    nights: 10,
     price: 5490,
     image: destAmazon,
+    gallery: [destAmazon, destPeru, heroMachuPicchu],
     shortDescription: "The ultimate wilderness and heritage experience: from the Andean peaks to the world's most iconic river.",
-    description: "Embark on an 11-day luxury expedition that spans the diverse ecosystems of Peru. Journey through the Sacred Valley to the heights of Machu Picchu before flying deep into the Amazon for a luxury river cruise or a stay in a world-exclusive canopy lodge.",
-    type: ["Luxury", "Adventure", "Nature"],
-    badge: "Premium",
+    styleSummary: "Aventura, Naturaleza, Crucero de Lujo, Arqueológico",
+    description: "After Machu Picchu, the Amazon River stands as one of South America’s most iconic natural treasures. The second-largest river basin in the world flows through breathtaking landscapes rich in exotic flora, extraordinary wildlife, and unmatched biodiversity. It is no surprise that many biologists consider Peru a country truly blessed by nature. Within its vast Amazon region live remarkable endemic species such as pink river dolphins, giant river otters, jaguars, giant paiche, and majestic harpy eagles.\n\nWith this in mind, we have designed a unique journey that combines Peru’s most celebrated destinations. Begin in Lima, the vibrant capital known for its history and world-class gastronomy, continue to the enchanting city of Cusco, and explore the awe-inspiring Machu Picchu. Then, embark on an unforgettable four-day luxury cruise along the Amazon River.\n\nOn board your exclusive vessel, you will observe extraordinary wildlife, explore the jungle alongside expert naturalist guides, and enjoy premium services such as gourmet cuisine, a relaxing jacuzzi, and panoramic observation decks. This exceptional experience seamlessly blends Peru’s cultural wonders with the raw beauty of the Amazon, creating a journey unlike any other.",
+    type: ["Luxury", "Adventure", "Nature", "Cultural"],
+    badge: "Amazon Exclusive",
     included: [
-        "High-end Amazon river cruise or luxury eco-lodge",
-        "Exclusive private tours in Machu Picchu",
-        "All internal flights and luxury transfers",
-        "Gourmet jungle and Andean cuisine",
-        "Private naturalist and historian guides",
-        "All specialized gear for Amazon exploration",
-        "Concierge service 24/7"
+        "1 night in Lima, 2 nights in Sacred Valley, 2 nights in Cusco, 1 night in Lima, 4 nights on Iquitos Cruise",
+        "04 nights in a Cruise room on the Amazon",
+        "Most Tours in Private Service",
+        "Majority transfers and transportation with a private van",
+        "A Professional Driver",
+        "All entrance tickets to all the attractions mentioned in the program",
+        "Round trip VISTADOME train ticket to Machu Picchu",
+        "Round trip bus ticket to Machu Picchu",
+        "Entrance tickets to Machu Picchu",
+        "Meals as indicated (B = Breakfast, L = Lunch, D = Dinner)",
+        "A Professional English-Speaking Tour Guide",
+        "Personal attention"
+    ],
+    notIncluded: [
+        "Airfare",
+        "Lunches or dinner (unless otherwise specified)",
+        "Tips"
     ],
     itinerary: [
-        { day: 1, title: "Lima Welcome", description: "Private transfer to your luxury hotel by the Pacific." },
-        { day: 2, title: "Cusco & Sacred Valley", description: "Flight to Cusco and immediate descent to the Sacred Valley." },
-        { day: 3, title: "Machu Picchu Wonder", description: "Full day private guided tour of the citadel. Overnight in Aguas Calientes." },
-        { day: 4, title: "Second Entrance & Cusco", description: "Morning hike to Intipunku (Sun Gate). Afternoon train back to Cusco." },
-        { day: 5, title: "Imperial Cusco City Tour", description: "Explore the cobblestone streets and San Blas artisan quarter." },
-        { day: 6, title: "Fly to the Amazon (Iquitos)", description: "Flight to Iquitos via Lima. Board your luxury river cruiser." },
-        { day: 7, title: "Black Water Lagoons", description: "Small boat exploration of remote tributaries. Spot pink dolphins and sloths." },
-        { day: 8, title: "Dolphin Spotting & Canopy Walk", description: "Swim in the Amazon (optional) and explore the rainforest canopy." },
-        { day: 9, title: "Jungle Village Visit", description: "Meet with local Riparian communities and learn about jungle life." },
-        { day: 10, title: "Amazon Sunset", description: "Final day of exploration with a gala dinner aboard." },
-        { day: 11, title: "Return to Lima", description: "Disembark and flight back to Lima for your international connection." }
+        {
+            day: 1,
+            title: "Peru – Lima",
+            image: tourLima,
+            summary: "Arrive at your hotel in Lima after your international flight and recharge your energy for your city tour!",
+            description: "ARRIVE AT YOUR HOTEL IN LIMA AFTER YOUR INTERNATIONAL FLIGHT AND RECHARGE YOUR ENERGY FOR YOUR CITY TOUR!\n\nWe know how exhausting international flights can be, so we will save you from the stress of navigating alone at the moment of your arrival in the Peruvian capital. At Lima Airport, your Machu Travel Peru host will be waiting for you at the arrival gate to accompany you to the hotel of your preference.\n\nOnce you have settled in your room, you can take a comforting shower, leaving behind the fatigue of such a long flight, and rest, or you can take advantage of the time to enjoy the best Peruvian gastronomy with a tasty lunch (on your own) in your hotel or the surrounding areas.\n\nLater, we will begin a fantastic city tour of Lima's colonial and modern zones.\n\nYou can lose yourself among French-style, republican squares like the Plaza San Martín or the City's main square (Plaza de Armas) while wandering by a charming colonial alley called Jirón de la Unión. Following this, your guide will lead you to the colonial Monastery of San Francisco, where you can appreciate its beautiful Spanish baroque architecture and some religious sculptures from colonial times. But, the best of all will be exploring the hidden underneath its enigmatic catacombs! Here, you’ll know why this monastery was considered the first cemetery for the first Lima inhabitants.\n\nAfter you return to your hotel, why not enjoy a beautiful afternoon at your own pace by exploring zones of Miraflores, a Lima tourist district, walk in the beautiful Kennedy Park, or go shopping in the famous Larcomar Mall center.\n\nIn the evening, for dinner, we recommend considering Central or Maido, both recognized as the finest restaurants in the country. Central ranked first in 2023, and Maido achieved first place in 2025 on The World’s 50 Best Restaurants list. Please note that, due to their high demand, reservations must be secured in advance.\n\n• Overnight in Lima.\n• Included meals: None."
+        },
+        {
+            day: 2,
+            title: "Lima – Cusco - Sacred Valley",
+            image: tourPisac,
+            summary: "Welcome to Cusco! Explore the Textile House Museum and its living traditions and Pisac Inca neighborhood.",
+            description: "WELCOME TO CUSCO! EXPLORE THE TEXTILE HOUSE MUSEUM AND ITS LIVING TRADITIONS AND PISAC INCA NEIGHBORHOOD\n\nToday, your adventure in the Andean highlands is about to begin! After enjoying a satisfying breakfast at your hotel, your host will accompany you to the Lima airport, where you’ll take a comfortable flight to Cusco, the ancient Imperial Inca City.\n\nYou can watch the Pacific Ocean merge with the blue skies through your plane window, giving way to vast dunes that, in turn, rise and then collapse against the slopes of the towering Andes mountains once conquered many centuries ago by the impressive Inca civilization.\n\nOn your arrival in Cusco, your local host will be waiting for you in the national arrivals area of Cusco Airport, holding a sign with your name. “It’s not altitude sickness… it’s the feeling of being close to heaven,” is a phrase he’ll often say about the altitude. To help you avoid altitude sickness, we’ll head directly from Cusco Airport to the Sacred Valley of the Incas, located 600 meters below Cusco. But please don’t worry you’ll get to enjoy all the wonderful sights of Cusco at the end of your journey, once your body is perfectly acclimatized to the altitude.\n\nOn the way to the Sacred Valley of the Incas we will visit an exceptional Textile House Museum, where you can see the four types of South American camelids raised in captivity: llamas, alpacas, guanacos, and vicuñas. You can feed them and learn how to tell them apart. Local artisans will show you how they use the ancient techniques of their Inca ancestors to transform the delicate fibers of these animals, especially alpacas and vicuñas, into beautiful and colorful garments. You can also see the creation of multicolored belts, finely woven blankets, and exquisitely embroidered textiles. To complete the experience, a guided tour of the museum will immerse you in the fascinating history of pre-Inca cultures and their textile legacy.\n\nThen, we’ll continue descending through the valley slope until we reach a spectacular Inca archaeological site over a hill called Pisac, with magnificent terraced fields on its hill slopes, among Inca enclosures, squares, temples, and even an Inca cemetery! Your first contact with a rich Andean past! Descending into the modern town, we will lose ourselves among the colored stands of the famous Pisac traditional market, where we will be fascinated by its beautiful handicrafts made by local people, like fabric crafts, sculptures, jewelry, and paintings with Andean thematic.\n\nNext, we will visit a charming restaurant nestled in the beautiful landscapes of the Sacred Valley to enjoy a delicious lunch made from local ingredients, all included in your program. You can choose the restaurant in advance, with the advice of your travel consultants.\n\nFinally, we’ll go to your hotel in the middle of the spectacular scenery of the Sacred Valley, and you can enjoy a delicious dinner here, on your own. A well-deserved sleep is guaranteed tonight!\n\n• Overnight in Sacred Valley.\n• Included meals: Breakfast and Lunch."
+        },
+        {
+            day: 3,
+            title: "Sacred Valley",
+            image: tourMoray,
+            summary: "Explore the last Inca fortress of Ollantaytambo, the Inca salt mines of Maras, and the circular terraces of Moray.",
+            description: "EXPLORE THE LAST INCA FORTRESS OF OLLANTAYTAMBO, THE INCA SALT MINES OF MARAS, AND THE CIRCULAR TERRACES OF MORAY\n\nThe Sacred Valley still has treasures to discover, and you will not miss a thing! This day assures an unforgettable trip in a perfect climate. The Sacred Valley is known for its charming climate 365 days a year. First, you'll enjoy a delicious breakfast at your luxury hotel. Then, with your guide, you will begin your adventure through the Sacred Valley of the Incas.\n\nDiscover Ollantaytambo, a fortress that was the last Inca refuge in Andean lands during the Spanish invasion. Wander among its narrow alleys, temples, enclosures, and squares of well-carved, perfectly fitted, stone architecture. This incredible experience will be accompanied by stories and myths that your guide will tell you about the place. One notable mention, the fantastic ancient love story legend about an Inca military General and a beautiful Princess, the daughter of the Inca emperor Pachacutec.\n\nNext, you will go to a charming restaurant in the middle of the beautiful landscapes of the Sacred Valley, to enjoy a delicious and exclusive lunch made from local ingredients. As if this were not enough, the variety of flavors and colors in its menu, dishes, and drinks will surprise you.\n\nThen, our next stop will be the white slopes of Maras. There, you will enjoy the brightness of 2,000 small Inca salt wells that are still used by local people today to provide themselves with salt. By the way, the Maras salt is recognized worldwide as being perfect for grills and barbecues.\n\nMoving on, your guide will transfer up to Moray, where you'll be fascinated by a series of circular terraces, in the form of rings, that go into the earth's deeps. These circular terraces were used as an Incan laboratory to acclimatize crops. They sowed a specific type of seed in each circular terrace, from the smallest and deepest ring to the largest, to see the quality of the harvest they obtained.\n\nFinally, we’ll return to the hotel for a deserved rest, you can take a relaxing shower or, maybe, enjoy a fantastic dinner on your own.\n\n• Overnight in Sacred Valley.\n• Included meals: Breakfast and Lunch."
+        },
+        {
+            day: 4,
+            title: "Sacred Valley - Machu Picchu - Cusco",
+            image: tourMachuPicchuDetail,
+            summary: "Conquest the most incredible Inca citadel, Machu Picchu, on an unforgettable day!",
+            description: "CONQUEST THE MOST INCREDIBLE INCA CITADEL, MACHU PICCHU, ON AN UNFORGETTABLE DAY\n\nThe day to conquer Machu Picchu has arrived! After a delicious breakfast in your hotel, your host will take you to Ollantaytambo train station to dispatch you on a charming and comfortable train heading to Aguas Calientes, the modern town of Machu Picchu. The magical train trip will last one and a half hours, crossing the spectacular Peruvian jungle, always accompanied by the singing of exotic birds, leafy undergrowth, and the Vilcanota river that will follow the train's movement, like a snake on the lookout for its prey!\n\nOnce you arrive at Aguas Calientes train station, your local guide will await you at the arrivals gate. With your guide, you’ll go to the bus station to take a “CONSETTUR” bus heading to the top of a mountain where the Machu Picchu citadel is located. After 35 minutes of the bus trip, the bus will drop you at the same entrance gate to Machu Picchu.\n\nThen, you will enter the famous Inca citadel to start living the magic there! You can get lost between enclosures, squares, temples, and stone alleys perfectly carved and fitted. Exploring for two hours the mysteries and magic of an Inca citadel that continues to amaze the world with its beauty. Of course, as a soundtrack, you will listen to the stories of its construction, inhabitants, and function from your private guide.\n\nOnce the tour is over, but not before taking your dream photo of Machu Picchu, your tour guide will dispatch you in a CONSETTUR bus returning to Aguas Calientes town. There you’ll enjoy a fantastic lunch included in your program in one of the best restaurants in the zone.\n\nNext, you’ll have to go to the Aguas Calientes train station to take your train to return to Cusco. There, you will take a comfortable train back to Ollantaytambo or Poroy train stations. Whatever station you arrive at, another member of our staff will wait for you to transfer to the Cusco Hotel, where you can enjoy a delicious dinner on your own, before taking a relaxing shower and enjoying a well-deserved rest.\n\nDon't worry; as you can see, you will always be assisted at any departure or arrival point!\n\nOPTIONAL: If you want to continue enjoying Machu Picchu, this package, like all the others, can be fully customized by adding a night in Aguas Calientes. So, on the following day, you'll be able to enjoy a second visit to the enigmatic Inca citadel or hike to nearby mountains like Huayna Picchu and get fabulous photos of Huayna Picchu. Just tell us your requirements, it’s as easy as that!\n\n• Overnight in Cusco.\n• Included meals: Breakfast and Lunch."
+        },
+        {
+            day: 5,
+            title: "Cusco",
+            image: tourCuscoDetail,
+            summary: "Explore the magical city of Cusco, the enigmatic heart of the Inca Empire.",
+            description: "EXPLORE THE MAGICAL CITY OF CUSCO, THE ENIGMATIC HEART OF THE INCA EMPIRE\n\nAre you ready to discover the enchanting capital of the Inca Empire? Welcome to Cusco, a city where history, culture, and ancient mysteries blend seamlessly with everyday life. After enjoying a comforting and delicious breakfast at your hotel, your guide will be ready to transport you back in time.\n\nFirst, you’ll explore the Inca fortress of Sacsayhuaman, with its giant rocks perfectly fitted into its structure. The tour will continue by visiting the Qenqo Inca ceremonial center with its ancient sacrifice vestiges. Then, the Inca military barrack, Puca Pucara, will fascinate you with its beautiful views of Cusco. Following, your guide will show you the retreat place of the Inca sovereign called Tambomachay, with its beautiful water fonts, where the sovereign spent long periods resting and hunting.\n\nThen, we will return to the Cusco Center to lose ourselves in its charming stone alleys by appreciating the Renaissance architecture of the Cathedral of Cusco and its famous painting collection of a unique art style called \"Escuela Cusqueña\".\n\nLater, your guide will lead you to the Qoricancha temple, located a short distance from the Cathedral, where you will be fascinated by the mix of Inca and Spanish architectural styles, besides some original remains of the Inca temples inside it.\n\nFinally, your tour will end in the main square. You might enjoy a nice lunch or dinner on your own in one of the nearby restaurants, or we can arrange transport to drop you off at your hotel. Whatever your decision, tell your guide what you would like to do!\n\n• Overnight in Cusco.\n• Included meals: Breakfast."
+        },
+        {
+            day: 6,
+            title: "Cusco – Lima",
+            image: tourLima,
+            summary: "Return to Lima and prepare your body and mind for our jungle experience next day!",
+            description: "RETURN TO LIMA AND PREPARE YOUR BODY AND MIND FOR OUR JUNGLE EXPERIENCE NEXT DAY!\n\nAre you ready to leave the Peruvian Andes and venture into the extraordinary Amazon rainforest? Simply enjoy a comforting breakfast, fully included in your Cusco hotel stay, and let the day unfold naturally.\n\nYou will have the morning at leisure to explore the ancient Inca capital of Cusco at your own pace. Charming traditional markets, picturesque neighborhoods, inviting alleyways, and a wealth of history await you in this beautiful city.\n\nIn the afternoon, at the scheduled time, a MACHU TRAVEL PERU representative will pick you up from your hotel and take you to the Cusco airport for your flight to Lima.\n\nUpon arrival in Lima, our local host will greet you at the airport and accompany you to a nearby hotel, where you can rest and prepare for the incredible adventure that awaits you the following day.\n\nYour host will also be happy to suggest options for a delicious lunch and dinner, either at the hotel or in nearby restaurants.\n\n• Overnight in Lima.\n• Included meals: Breakfast."
+        },
+        {
+            day: 7,
+            title: "Lima – Iquitos",
+            image: destAmazon,
+            summary: "Welcome to Iquitos, the main entrance to the Amazon, onboard the fabulous Aqua Cruise.",
+            description: "WELCOME TO IQUITOS, THE MAIN ENTRANCE TO THE AMAZON, ONBOARD THE FABULOUS AQUA CRUISE\n\nThis day marks the beginning of your adventure through the Peruvian Amazon. After enjoying a fantastic breakfast at your hotel in Lima, your local host will transfer you early in the morning to Lima Airport for your comfortable flight to Iquitos. The journey takes approximately 90 minutes to reach the capital of the Peruvian Amazon.\n\nFrom your window seat, you will watch the imposing Pacific Ocean fade into rolling dunes, which then give way to the foothills of towering, snow-capped mountains before the landscape transforms into lush jungle and dense Amazonian foliage.\n\nUpon arrival in Iquitos, your local guide will welcome you at the national arrivals area of Iquitos International Airport, holding a sign with your name. From there, he will accompany you to downtown Iquitos for an unforgettable City Tour. After this experience, a delicious lunch will be waiting for you to complete the afternoon.\n\nNext, your guide will take you on a 90-minute journey to the small town of Nauta. Here, you will board your fabulous Amazon cruise. Once on board, the cruise personnel will provide a safety briefing, and after a short orientation, you will settle into your comfortable 5-star cabin, an exceptional way to begin your Amazon River adventure.\n\nIn the evening, enjoy a delicious dinner from the chef’s specialty menu created by Pedro Miguel Schiaffino, a world-renowned Peruvian chef celebrated for his innovative Amazonian cuisine. Afterward, raise a toast to the start of a fantastic journey with a fine South American wine. A restful night’s sleep is guaranteed.\n\nOPTIONAL: You may choose from different cruise options and trip durations. Please contact our travel agents for more information.\n\n• Overnight on Iquitos Cruise.\n• Included meals: Breakfast."
+        },
+        {
+            day: 8,
+            title: "Iquitos",
+            image: destAmazon,
+            summary: "Sail through fantastic jungle lagoons and rivers in search of piranhas and pink dolphins.",
+            description: "SAIL THROUGH FANTASTIC JUNGLE LAGOONS AND RIVERS IN SEARCH OF PIRANHAS AND PINK DOLPHINS\n\nOur first full day in the Amazon will be filled with vibrant sounds and colors. Very early in the morning, we will explore some of the most essential areas of Pacaya Samiria, where wildlife is at its most active. Here, you can spot exotic birds, various parrot species, and even playful river otters.\n\nLater in the morning, the cruise will make a brief stop, and we will begin a hike toward Belluda Caño. During the dry season, this paradise offers two unique visiting options: the Flooded Forest and the Dry Land Forest. In both environments, you can observe remarkable species such as hummingbirds, woodpeckers, pygmy marmosets, snail kites, nun birds, and even blackbirds. Our hike concludes at a beautiful lagoon that shelters endangered freshwater fish, where we can navigate its calm waters by canoe.\n\nAlternatively, during the rainy season (November - March), we will explore the Belluda Caño stream by boat, searching for monkeys, parrots, macaws, brilliant Morpho butterflies, and different species of falcons, including the “laughing falcon,” named for its distinctive high-pitched call.\n\nIn the afternoon, we will sail along the Río Dorado to fish for piranhas, an unforgettable Amazonian experience. Along the way, we may spot pink river dolphins swimming near the boat, and if conditions permit, you may even have the chance to observe them up close or swim alongside them. These gentle creatures inhabit the freshwater rivers of the Amazon. Be sure to bring swimwear, a waterproof camera, and snorkel gear.\n\nAt night, your guide will lead you on a thrilling night safari along the riverbank in search of giant reptiles, mysterious nocturnal birds, caimans, and other creatures of the dark.\n\nAt the end of the day, you will return to the cruise to relax and enjoy a delicious dinner.\n\nOPTIONAL: You may choose from a variety of cruise options and trip durations. Please contact our travel agents for more information.\n\nNOTE: The exact order of daily activities may vary depending on weather conditions and other operational considerations. Your local guide will provide daily updates on the experiences planned for each day.\n\n• Overnight on Iquitos Cruise.\n• Included meals: Breakfast."
+        },
+        {
+            day: 9,
+            title: "Iquitos",
+            image: destAmazon,
+            summary: "Find peace while you let yourself be carried by the calm waters of the Zapote and Pacaya rivers.",
+            description: "FIND PEACE WHILE YOU LET YOURSELF BE CARRIED BY THE CALM WATERS OF THE ZAPOTE AND PACAYA RIVERS\n\nToday is not only about observing the natural habitat, but also enjoying a bit of physical adventure. We will kayak along the calm waters of the Zapote River, navigating parallel to one of its banks while watching giant, prehistoric-looking iguanas basking on warm logs beside the water. Squirrel monkeys will also be lively companions, swinging from the highest tree branches, moving in groups, and filling the forest with their playful chatter.\n\nAt noon, you will enjoy a picturesque and delicious picnic lunch in the shade of towering Amazonian trees.\n\nIn the afternoon, you will take a guided walk on firm ground to learn about frogs, insects, and the medicinal trees used by local communities. Upon returning to the cruise, you will witness a magical Amazon sunset. At that moment, you will be entering the Pacaya River, located in the heart of the Pacaya Samiria National Reserve, the largest protected wetland in Peru. This vast ecosystem encompasses tranquil lagoons, mangroves, palm forests, and countless interconnected waterways. Here, you may even take a refreshing swim in one of its serene lagoons.\n\nA delicious dinner awaits you on board, followed by a quiet and restful night.\n\nOPTIONAL: You may choose from different cruise options and trip durations. Please contact our travel agents for more information.\n\nNOTE: The exact order of daily activities may vary due to weather conditions and other operational considerations. Your local guide will provide daily updates on the experiences planned for each day.\n\n• Overnight on Iquitos Cruise.\n• Included meals: Breakfast."
+        },
+        {
+            day: 10,
+            title: "Iquitos",
+            image: destAmazon,
+            summary: "Share customs, magic, and lifestyle with a native Amazon community and swim in their waters.",
+            description: "SHARE CUSTOMS, MAGIC, AND LIFESTYLE WITH A NATIVE AMAZON COMMUNITY AND SWIM IN THEIR WATERS\n\nOur last day in the jungle begins with a delicious onboard breakfast prepared with fresh fruit and local ingredients. Afterward, we will head to Lake Clavero, where you can enjoy a peaceful ride on small boats or swim in its calm waters while admiring the area’s exotic flora and fauna. You may even spot artisanal rafts from a nearby local community accompanying you during this magical experience.\n\nIn the afternoon, you will return to the cruise and continue toward the Yarapa River skiffs, where you will have the opportunity to go kayaking. The endemic wildlife of the region will surely leave you speechless! Later, the inhabitants of a town near Puerto Miguel will share their ancestral customs with you. You will also learn about medicinal plants and the remarkable harmony that exists between humans and nature.\n\nUpon returning to the cruise, you will enjoy a comforting dinner under the glow of the stars. Then, the entire crew will introduce themselves to the guests, bringing this unforgettable day in the jungle to a close.\n\nOPTIONAL: You can choose from different cruise options and trip durations. Please contact our Travel Agents for more information.\n\nNOTE: The order of daily activities may vary due to weather conditions or other factors. Your local guide will inform you of the experiences and details planned for each day.\n\n• Overnight on Iquitos Cruise.\n• Included meals: Breakfast."
+        },
+        {
+            day: 11,
+            title: "Iquitos – Lima",
+            image: tourSacredValleyDetail,
+            summary: "Saying goodbye to such beautiful moments does not have to be complicated.",
+            description: "SAYING GOODBYE TO SUCH BEAUTIFUL MOMENTS DOES NOT HAVE TO BE COMPLICATED\n\nWe know this is often the hardest part of any journey, saying goodbye to such unforgettable experiences. That’s why we want to make this moment as gentle and uncomplicated as possible. You’ll start the morning with a freshly prepared breakfast at your hotel, a last chance to enjoy the region’s flavors before departing.\n\nNext, at the scheduled time, your host will take you to Iquitos International Airport and assist you as you board your flight to Lima, where you can connect with your international flight back home.\n\nLike the sound of our \"Explore Machu Picchu and Sail the Amazon River\" tour? Do you have extra requests or questions? Please don’t hesitate to write to us. We will always be attentive to personalize your dreams in Peru at your desire!\n\nNOTE: The strict order of each-day activities can vary due to weather conditions and other considerations. Therefore, your local guide will inform you about the experiences and details to enjoy each day.\n\n• Overnight in Lima.\n• Included meals: Breakfast."
+        }
     ]
 };
