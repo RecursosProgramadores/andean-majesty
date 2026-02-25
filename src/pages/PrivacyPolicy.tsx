@@ -72,7 +72,7 @@ const PrivacyPolicy = () => {
 
                         <div className="pt-12 border-t border-border">
                             <p className="text-sm text-muted-foreground text-center">
-                                Last updated: February 2026. For any questions regarding this policy, please contact us at <a href="mailto:leadingperu@gmail.com" className="text-primary font-bold hover:underline">leadingperu@gmail.com</a>.
+                                Last updated: February 2026. For any questions regarding this policy, please contact us at <a href="mailto:reservas@leadingperutravel.com" className="text-primary font-bold hover:underline">reservas@leadingperutravel.com</a>.
                             </p>
                         </div>
                     </div>

@@ -52,6 +52,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileSubmenu, setMobileSubmenu] = useState<string | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
   // Close mobile menu on route change
@@ -60,19 +61,28 @@ const Navbar = () => {
     setMobileSubmenu(null);
   }, [location.pathname]);
 
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 shadow-card border-b border-black/10">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "shadow-card border-b border-black/10" : ""}`}>
       {/* Top Bar */}
-      <div className="bg-black text-[#e6c64f] text-[10px] py-1.5 hidden lg:block border-b border-[#e6c64f]/10">
+      <div className={`bg-black text-[#e6c64f] text-[10px] py-1.5 hidden lg:block border-b border-[#e6c64f]/10 transition-all duration-300 ${isScrolled ? "opacity-100" : "opacity-0 h-0 overflow-hidden py-0 border-0"}`}>
         <div className="container mx-auto px-4 lg:px-8 flex justify-end gap-6 font-bold uppercase tracking-widest">
-          <a href="tel:+51984509207" className="flex items-center gap-1.5 hover:text-white transition-colors">
+          <a href="mailto:reservas@leadingperutravel.com" className="flex items-center gap-1.5 hover:text-white transition-colors">
             <Phone className="w-3 h-3" /> +51 984 509 207
           </a>
           <a href="https://wa.me/51984509207" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-white transition-colors">
             <img src={whatsappIcon} alt="WhatsApp" className="w-3.5 h-3.5" /> WhatsApp Agent
           </a>
-          <a href="mailto:leadingperu@gmail.com" className="flex items-center gap-1.5 hover:text-white transition-colors">
-            <Mail className="w-3 h-3" /> leadingperu@gmail.com
+          <a href="mailto:reservas@leadingperutravel.com" className="flex items-center gap-1.5 hover:text-white transition-colors">
+            <Mail className="w-3 h-3" /> reservas@leadingperutravel.com
           </a>
           <a href="https://www.facebook.com/Machupicchutraveltour" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-white transition-colors">
             <img src={facebookIcon} alt="Facebook" className="w-3.5 h-3.5 brightness-0 invert" /> Facebook
@@ -80,7 +90,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="bg-[#e6c64f] container-fluid">
+      <div className={`transition-all duration-500 ${isScrolled ? "bg-[#e6c64f]" : "bg-transparent"} container-fluid`}>
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
@@ -88,7 +98,7 @@ const Navbar = () => {
               <img
                 src={logo}
                 alt="Leading Peru Travel"
-                className="h-10 lg:h-14 w-auto object-contain transition-transform hover:scale-105"
+                className={`h-10 lg:h-14 w-auto object-contain transition-all duration-500 hover:scale-105 ${isScrolled ? "scale-90" : "scale-100"}`}
               />
             </Link>
 
@@ -103,9 +113,8 @@ const Navbar = () => {
                 >
                   <Link
                     to={link.to || "#"}
-                    className={`text-[13px] font-bold uppercase tracking-wider transition-all hover:text-black/60 flex items-center gap-1 py-4 ${location.pathname === link.to
-                      ? "text-black"
-                      : "text-black/80"
+                    className={`text-[13px] font-bold uppercase tracking-wider transition-all flex items-center gap-1 py-4 ${isScrolled ? "text-black hover:text-black/60" : "text-white hover:text-[#e6c64f]"} ${location.pathname === link.to && isScrolled ? "text-black" :
+                      location.pathname === link.to && !isScrolled ? "text-[#e6c64f]" : ""
                       }`}
                   >
                     {link.label}
@@ -135,7 +144,7 @@ const Navbar = () => {
                   </AnimatePresence>
                 </div>
               ))}
-              <LanguageSwitcher />
+              <LanguageSwitcher isScrolled={isScrolled} />
               <a
                 href="https://wa.me/51984509207?text=Hi!%20I'm%20interested%20in%20a%20luxury%20tour%20to%20Machu%20Picchu"
                 target="_blank"
@@ -150,7 +159,7 @@ const Navbar = () => {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 text-black"
+              className={`lg:hidden p-2 transition-colors ${isScrolled ? "text-black" : "text-white"}`}
               aria-label="Toggle navigation menu"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -218,7 +227,7 @@ const Navbar = () => {
 
               <div className="pt-8 flex flex-col gap-6">
                 <div className="flex justify-center">
-                  <LanguageSwitcher />
+                  <LanguageSwitcher isScrolled={true} />
                 </div>
                 <a
                   href="https://wa.me/51984509207?text=Hi!%20I'm%20interested%20in%20a%20luxury%20tour%20to%20Machu%20Picchu"

@@ -203,11 +203,11 @@ const Contact = () => {
                       </div>
                       <span className="font-medium">+51 984 509 207</span>
                     </a>
-                    <a href="mailto:leadingperu@gmail.com" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group">
+                    <a href="mailto:reservas@leadingperutravel.com" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group">
                       <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                         <Mail className="w-5 h-5 text-primary" />
                       </div>
-                      <span className="font-medium">leadingperu@gmail.com</span>
+                      <span className="font-medium">reservas@leadingperutravel.com</span>
                     </a>
                     <a href="https://www.facebook.com/Machupicchutraveltour" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group">
                       <div className="w-10 h-10 rounded-full bg-blue-600/10 flex items-center justify-center group-hover:scale-110 transition-transform">

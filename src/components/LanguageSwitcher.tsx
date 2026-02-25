@@ -9,7 +9,7 @@ const languages = [
   { code: "de", label: "Deutsch", flag: "🇩🇪" },
 ];
 
-const LanguageSwitcher = () => {
+const LanguageSwitcher = ({ isScrolled }: { isScrolled?: boolean }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState(languages[0]);
   const ref = useRef<HTMLDivElement>(null);
@@ -28,7 +28,7 @@ const LanguageSwitcher = () => {
     <div ref={ref} className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1.5 text-sm font-bold text-black/80 hover:text-black transition-colors px-2 py-1.5 rounded-md hover:bg-black/5"
+        className={`flex items-center gap-1.5 text-sm font-bold transition-colors px-2 py-1.5 rounded-md ${isScrolled ? "text-black/80 hover:text-black hover:bg-black/5" : "text-white/90 hover:text-white hover:bg-white/10"}`}
         aria-label="Select language"
       >
         <Globe className="w-4 h-4" />
@@ -53,8 +53,8 @@ const LanguageSwitcher = () => {
                   setIsOpen(false);
                 }}
                 className={`w-full flex items-center gap-3 px-4 py-3 text-sm transition-colors hover:bg-black/5 ${selected.code === lang.code
-                    ? "text-black font-bold bg-black/5"
-                    : "text-black/70"
+                  ? "text-black font-bold bg-black/5"
+                  : "text-black/70"
                   }`}
               >
                 <span className="text-base">{lang.flag}</span>

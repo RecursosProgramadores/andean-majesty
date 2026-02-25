@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Star, Clock, Shield, Users, Sparkles, MapPin, ArrowRight, ChevronLeft, ChevronRight, Quote } from "lucide-react";
-import { useState } from "react";
 import Layout from "@/components/Layout";
 import { tours, destinations, testimonials } from "@/data/tours";
+import { allBlogPosts } from "@/data/blogs";
+import { Star, Clock, Shield, Users, Sparkles, MapPin, ArrowRight, ChevronLeft, ChevronRight, Quote, Calendar } from "lucide-react";
 import heroImg from "@/assets/hero-machu-picchu.jpg";
 import destPeru from "@/assets/dest-peru.jpg";
 import destBolivia from "@/assets/dest-bolivia.jpg";
@@ -12,6 +12,23 @@ import destEcuador from "@/assets/dest-ecuador.jpg";
 import destAmazon from "@/assets/dest-amazon.jpg";
 import tourColca from "@/assets/tour-colca.jpg";
 import tourTiticaca from "@/assets/tour-titicaca.jpg";
+import logoAATC from "@/assets/company/AATC.webp";
+import logoMincetur from "@/assets/company/MINCETUR.png";
+import logoPromPeru from "@/assets/company/PromPeru.png";
+import logoCamaraCusco from "@/assets/company/camaracusco.png";
+import logoDircetur from "@/assets/company/dircetur.png";
+import logoFitur from "@/assets/company/logo-FITUR.png";
+import logoMarcaPeru from "@/assets/company/marcaperu.png";
+
+const partnerLogos = [
+  { src: logoAATC, alt: "AATC" },
+  { src: logoMincetur, alt: "MINCETUR" },
+  { src: logoPromPeru, alt: "PromPeru" },
+  { src: logoCamaraCusco, alt: "Camara Cusco" },
+  { src: logoDircetur, alt: "Dircetur" },
+  { src: logoFitur, alt: "FITUR" },
+  { src: logoMarcaPeru, alt: "Marca Peru" },
+];
 
 const destImages: Record<string, string> = {
   Peru: destPeru,
@@ -20,7 +37,7 @@ const destImages: Record<string, string> = {
   Ecuador: destEcuador,
 };
 
-const galleryImages = [destPeru, destBolivia, destChile, destEcuador, destAmazon, tourColca, tourTiticaca, heroImg];
+
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -33,7 +50,7 @@ const Index = () => {
   const featuredTours = tours.slice(0, 6);
 
   return (
-    <Layout>
+    <Layout showPadding={false}>
       {/* HERO */}
       <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
         <img
@@ -113,27 +130,35 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <motion.div {...fadeInUp} className="text-center mb-12">
-              <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                Why Travel With Leading Peru Travel?
+              <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-2">
+                Luxury experiences. Tailor-made trips
               </h2>
-              <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
+              <p className="text-primary font-bold text-lg mb-4 uppercase tracking-wider">
+                Luxury South America Vacation Packages
+              </p>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-6">
+                Experience Peru through exclusive, custom-designed luxury journeys.
+              </p>
+              <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-12" />
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            <motion.div {...fadeInUp} className="text-center mb-12">
+              <h3 className="font-heading text-2xl lg:text-3xl font-bold text-foreground">Why Choose Leading Peru Travel</h3>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
-                "With over 15 years of experience, Machu Picchu Travel Tour specializes in creating authentic, tailor-made journeys across Peru and South America. Our passion for excellence, deep destination knowledge, and meticulous attention to detail ensure every trip is thoughtfully designed and flawlessly executed.",
-                "We work with expert local guides, carefully selected accommodations, and trusted partners to deliver meaningful experiences that go beyond traditional tourism. From cultural encounters to exclusive adventures and luxury escapes, each journey is crafted to reflect your interests, comfort, and travel style.",
-                "At Machu Picchu Travel Tour, we believe travel should be personal, enriching, and unforgettable. From the moment you start planning until the end of your journey, our dedicated team is by your side—so you can explore with confidence, comfort, and peace of mind."
-              ].map((text, i) => (
-                <motion.div
-                  key={i}
-                  {...fadeInUp}
-                  transition={{ ...fadeInUp.transition, delay: i * 0.15 }}
-                  className="bg-card p-6 lg:p-8 rounded-xl border border-border/50 shadow-luxury hover:shadow-card-hover transition-all duration-300 group flex flex-col"
-                >
-                  <p className="text-muted-foreground leading-relaxed text-base lg:text-lg group-hover:text-foreground transition-colors">
-                    {text}
-                  </p>
+                { icon: Sparkles, title: "Luxury Experiences", desc: "5-star hotels, gourmet dining, first-class trains, and private transfers. Every detail curated for excellence." },
+                { icon: Users, title: "Rural Community Tourism", desc: "Authentic connections with indigenous communities. Support sustainable development and cultural preservation." },
+                { icon: MapPin, title: "Expert Local Guides", desc: "Bilingual guides with deep knowledge of history, culture, and nature. Born and raised in the places you'll visit." },
+                { icon: Shield, title: "100% Customizable", desc: "Every itinerary is tailored to your preferences, pace, and interests. Your dream trip, your way." },
+              ].map((item, i) => (
+                <motion.div key={i} {...fadeInUp} transition={{ ...fadeInUp.transition, delay: i * 0.1 }} className="text-center p-6 rounded-xl bg-card shadow-card hover:shadow-card-hover transition-all">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <item.icon className="w-7 h-7 text-primary" />
+                  </div>
+                  <h3 className="font-heading text-lg font-bold text-foreground mb-2">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -141,7 +166,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* FEATURED DESTINATIONS */}
+      {/* FEATURED DESTINATIONS (COUNTRIES) */}
       <section className="py-16 lg:py-24 bg-card">
         <div className="container mx-auto px-4">
           <motion.div {...fadeInUp} className="text-center mb-12">
@@ -164,7 +189,7 @@ const Index = () => {
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <h3 className="font-heading text-2xl font-bold text-background">{dest.name}</h3>
                     <p className="text-background/75 text-sm mt-1">{dest.description}</p>
-                    <p className="text-accent text-xs font-semibold mt-2">{dest.tourCount} tours available</p>
+                    <p className="text-primary text-xs font-semibold mt-2 uppercase tracking-widest">{dest.tourCount} tours available</p>
                   </div>
                 </Link>
               </motion.div>
@@ -184,31 +209,36 @@ const Index = () => {
             {featuredTours.map((tour, i) => (
               <motion.div key={tour.id} {...fadeInUp} transition={{ ...fadeInUp.transition, delay: i * 0.1 }}>
                 <Link to={`/tours/${tour.slug}`} className="group block bg-background rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500">
-                  <div className="relative overflow-hidden aspect-[4/3]">
+                  <div className="relative overflow-hidden aspect-[3/4]">
                     <img
                       src={tour.image}
                       alt={`${tour.title} luxury tour`}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
+
                     {tour.badge && (
-                      <span className="absolute top-4 left-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                      <span className="absolute top-4 left-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider z-10">
                         {tour.badge}
                       </span>
                     )}
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
-                      <MapPin className="w-3 h-3" />
-                      {tour.destinations.join(" • ")}
+
+                    <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+                      <h3 className="font-heading text-xl lg:text-2xl font-bold text-background leading-tight mb-2">{tour.title}</h3>
+                      <div className="flex items-center gap-2 text-[10px] text-background/70 uppercase tracking-widest font-bold">
+                        <MapPin className="w-3 h-3 text-primary" />
+                        {tour.destinations.join(" • ")}
+                      </div>
                     </div>
-                    <h3 className="font-heading text-lg font-bold text-foreground group-hover:text-primary transition-colors">{tour.title}</h3>
-                    <p className="text-muted-foreground text-sm mt-2 line-clamp-2">{tour.shortDescription}</p>
+                  </div>
+                  <div className="p-6 pt-4">
+                    <p className="text-muted-foreground text-sm line-clamp-2">{tour.shortDescription}</p>
                     <div className="flex items-center justify-between mt-4 pt-4 border-t border-border">
                       <div>
                         <span className="text-xs text-muted-foreground">From</span>
-                        <p className="text-accent font-bold text-lg">USD ${tour.price.toLocaleString()}</p>
+                        <p className="text-primary font-bold text-lg">USD ${tour.price.toLocaleString()}</p>
                       </div>
-                      <span className="text-sm text-muted-foreground">{tour.duration} days</span>
+                      <span className="text-sm text-muted-foreground font-semibold">{tour.duration} days</span>
                     </div>
                   </div>
                 </Link>
@@ -226,30 +256,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* WHY CHOOSE US */}
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4">
-          <motion.div {...fadeInUp} className="text-center mb-12">
-            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground">Why Choose Leading Peru Travel</h2>
-          </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { icon: Sparkles, title: "Luxury Experiences", desc: "5-star hotels, gourmet dining, first-class trains, and private transfers. Every detail curated for excellence." },
-              { icon: Users, title: "Rural Community Tourism", desc: "Authentic connections with indigenous communities. Support sustainable development and cultural preservation." },
-              { icon: MapPin, title: "Expert Local Guides", desc: "Bilingual guides with deep knowledge of history, culture, and nature. Born and raised in the places you'll visit." },
-              { icon: Shield, title: "100% Customizable", desc: "Every itinerary is tailored to your preferences, pace, and interests. Your dream trip, your way." },
-            ].map((item, i) => (
-              <motion.div key={i} {...fadeInUp} transition={{ ...fadeInUp.transition, delay: i * 0.1 }} className="text-center p-6 rounded-xl bg-card shadow-card hover:shadow-card-hover transition-all">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="w-7 h-7 text-primary" />
-                </div>
-                <h3 className="font-heading text-lg font-bold text-foreground mb-2">{item.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* TESTIMONIALS */}
       <section className="py-20 lg:py-32 bg-[#f8f5f0] overflow-hidden">
@@ -335,27 +342,62 @@ const Index = () => {
         </div>
       </section>
 
-      {/* GALLERY TEASER */}
-      <section className="py-16 lg:py-24">
+      {/* THE JOURNAL (BLOG TEASER) */}
+      <section className="py-16 lg:py-24 bg-background">
         <div className="container mx-auto px-4">
           <motion.div {...fadeInUp} className="text-center mb-12">
-            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground">Explore Our Destinations</h2>
-            <p className="mt-3 text-muted-foreground">A glimpse of the extraordinary experiences awaiting you in the heart of South America.</p>
+            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground">Latest from The Journal</h2>
+            <p className="mt-3 text-muted-foreground">Stories, guides, and inspiration for the discerning adventurer.</p>
           </motion.div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4">
-            {galleryImages.slice(0, 8).map((img, i) => (
-              <motion.div key={i} {...fadeInUp} transition={{ ...fadeInUp.transition, delay: i * 0.05 }} className={`overflow-hidden rounded-lg ${i === 0 || i === 5 ? "row-span-2" : ""}`}>
-                <img src={img} alt={`South America luxury travel photo ${i + 1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
-              </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {allBlogPosts.slice(0, 3).map((post, i) => (
+              <motion.article
+                key={post.id}
+                {...fadeInUp}
+                transition={{ ...fadeInUp.transition, delay: i * 0.1 }}
+                className="group flex flex-col bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 border border-border/50"
+              >
+                <Link to="/blog" className="block relative aspect-[16/10] overflow-hidden">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-primary/90 backdrop-blur-md text-primary-foreground px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg">
+                      {post.category}
+                    </span>
+                  </div>
+                </Link>
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="flex items-center gap-2 text-[10px] text-muted-foreground mb-3 font-bold uppercase tracking-wider">
+                    <Calendar className="w-3.5 h-3.5 text-primary" />
+                    {post.date}
+                  </div>
+                  <h3 className="font-heading text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                    {post.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-6 line-clamp-3">
+                    {post.excerpt}
+                  </p>
+                  <Link
+                    to="/blog"
+                    className="mt-auto inline-flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group-hover:gap-4 transition-all"
+                  >
+                    Read Story <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </motion.article>
             ))}
           </div>
-          <motion.div {...fadeInUp} className="text-center mt-8">
-            <Link to="/destinations" className="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
-              View Destination Details <ArrowRight className="w-4 h-4" />
+          <motion.div {...fadeInUp} className="text-center mt-12">
+            <Link to="/blog" className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-secondary/90 transition-all">
+              Explore More Stories <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
         </div>
       </section>
+
 
       {/* FINAL CTA */}
       <section className="relative py-20 lg:py-32 overflow-hidden">
@@ -380,6 +422,30 @@ const Index = () => {
             >
               WhatsApp Us
             </a>
+          </motion.div>
+
+
+        </div>
+      </section>
+
+      {/* ACCREDITATIONS SECTION */}
+      <section className="py-16 bg-background border-t border-border/50">
+        <div className="container mx-auto px-4">
+          <motion.div {...fadeInUp} className="text-center">
+            <h3 className="font-heading text-sm font-bold text-foreground uppercase tracking-[0.4em] mb-12 opacity-70">
+              We are a legally accredited company
+            </h3>
+            <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20">
+              {partnerLogos.map((logo, idx) => (
+                <div key={idx} className="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500 transform hover:scale-110">
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="h-8 md:h-10 w-auto object-contain"
+                  />
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>

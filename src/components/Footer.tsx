@@ -23,12 +23,6 @@ const Footer = () => {
             <p className="text-white/50 text-xs leading-relaxed max-w-xs font-medium uppercase tracking-wider">
               Discover the new Wonders of Peru, enjoy your exciting South American adventure with our premium handcrafted tours.
             </p>
-            <div className="pt-4 flex flex-wrap gap-4 opacity-50 grayscale hover:grayscale-0 transition-all">
-              {/* Membership Logos Placeholders */}
-              <div className="w-12 h-12 bg-white/10 rounded flex items-center justify-center text-[8px] font-bold text-center p-1 uppercase">Sernanp</div>
-              <div className="w-12 h-12 bg-white/10 rounded flex items-center justify-center text-[8px] font-bold text-center p-1 uppercase">Dircetur</div>
-              <div className="w-12 h-12 bg-white/10 rounded flex items-center justify-center text-[8px] font-bold text-center p-1 uppercase">Promperu</div>
-            </div>
           </div>
 
           {/* Column 2: Customer Service */}
@@ -52,9 +46,9 @@ const Footer = () => {
                 </div>
               </div>
               <div className="pt-4 space-y-3">
-                <a href="mailto:leadingperu@gmail.com" className="flex items-center gap-3 text-white/50 hover:text-primary transition-colors text-xs font-medium group">
+                <a href="mailto:reservas@leadingperutravel.com" className="flex items-center gap-3 text-white/50 hover:text-primary transition-colors text-xs font-medium group">
                   <Mail className="w-4 h-4 shrink-0 group-hover:scale-110 transition-transform" />
-                  leadingperu@gmail.com
+                  reservas@leadingperutravel.com
                 </a>
                 <a href="tel:+51984509207" className="flex items-center gap-3 text-white/50 hover:text-primary transition-colors text-xs font-medium group">
                   <Phone className="w-4 h-4 shrink-0 group-hover:scale-110 transition-transform" />
