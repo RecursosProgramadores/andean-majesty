@@ -11,6 +11,8 @@ import destEcuador from "@/assets/dest-ecuador.jpg";
 import tourPisac from "@/assets/tour-peru-pisac.png";
 import tourMachupicchu from "@/assets/tour-peru-machupicchu.png";
 import tourCusco from "@/assets/tour-peru-cusco.png";
+import transportDavid from "@/assets/transporte/TramsporteDavidValentinCondoriQuisani.jpeg";
+import transportFleet from "@/assets/transporte/tramsporte.jpeg";
 
 const Team = () => {
     const departments = [
@@ -81,7 +83,12 @@ const Team = () => {
             description: "Our reliable fleet and drivers ensuring safe and comfortable travel.",
             image: destChile,
             members: [
-                { name: "David Valentin Condori Quisani", role: "Transport Coordinator", bio: "Overseeing our modern fleet and professional driving team for maximum safety." },
+                {
+                    name: "David Valentin Condori Quisani",
+                    role: "Transport Coordinator",
+                    bio: "Overseeing our modern fleet and professional driving team for maximum safety.",
+                    extraImages: [transportDavid, transportFleet]
+                },
             ]
         },
     ];
@@ -194,20 +201,37 @@ const Team = () => {
                                     {/* Members Content */}
                                     <div className="lg:col-span-12 p-10 lg:p-20">
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24">
-                                            {dept.members.map((member, memIdx) => (
-                                                <div key={memIdx} className="space-y-6 relative">
-                                                    <div className="space-y-1">
-                                                        <h3 className="font-heading text-3xl font-black text-foreground group-hover:text-primary transition-colors">
-                                                            {member.name}
-                                                        </h3>
-                                                        <p className="text-accent font-black text-sm uppercase tracking-[0.3em] italic">
-                                                            {member.role}
+                                            {dept.members.map((member: any, memIdx) => (
+                                                <div key={memIdx} className={`space-y-6 relative ${member.extraImages ? 'md:col-span-2 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center' : ''}`}>
+                                                    <div className="space-y-6">
+                                                        <div className="space-y-1">
+                                                            <h3 className="font-heading text-3xl font-black text-foreground group-hover:text-primary transition-colors">
+                                                                {member.name}
+                                                            </h3>
+                                                            <p className="text-accent font-black text-sm uppercase tracking-[0.3em] italic">
+                                                                {member.role}
+                                                            </p>
+                                                        </div>
+                                                        <div className="w-12 h-[2px] bg-accent/30" />
+                                                        <p className="text-muted-foreground leading-relaxed text-lg font-medium italic">
+                                                            "{member.bio}"
                                                         </p>
                                                     </div>
-                                                    <div className="w-12 h-[2px] bg-accent/30" />
-                                                    <p className="text-muted-foreground leading-relaxed text-lg font-medium italic">
-                                                        "{member.bio}"
-                                                    </p>
+
+                                                    {member.extraImages && (
+                                                        <div className="grid grid-cols-2 gap-4">
+                                                            {member.extraImages.map((img: string, i: number) => (
+                                                                <div key={i} className="relative aspect-square rounded-2xl overflow-hidden shadow-xl group/img">
+                                                                    <img
+                                                                        src={img}
+                                                                        alt={`Transport fleet ${i + 1}`}
+                                                                        className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-110"
+                                                                    />
+                                                                    <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover/img:opacity-100 transition-opacity duration-500" />
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    )}
                                                 </div>
                                             ))}
                                         </div>

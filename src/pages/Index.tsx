@@ -12,23 +12,7 @@ import destEcuador from "@/assets/dest-ecuador.jpg";
 import destAmazon from "@/assets/dest-amazon.jpg";
 import tourColca from "@/assets/tour-colca.jpg";
 import tourTiticaca from "@/assets/tour-titicaca.jpg";
-import logoAATC from "@/assets/company/AATC.webp";
-import logoMincetur from "@/assets/company/MINCETUR.png";
-import logoPromPeru from "@/assets/company/PromPeru.png";
-import logoCamaraCusco from "@/assets/company/camaracusco.png";
-import logoDircetur from "@/assets/company/dircetur.png";
-import logoFitur from "@/assets/company/logo-FITUR.png";
-import logoMarcaPeru from "@/assets/company/marcaperu.png";
 
-const partnerLogos = [
-  { src: logoAATC, alt: "AATC" },
-  { src: logoMincetur, alt: "MINCETUR" },
-  { src: logoPromPeru, alt: "PromPeru" },
-  { src: logoCamaraCusco, alt: "Camara Cusco" },
-  { src: logoDircetur, alt: "Dircetur" },
-  { src: logoFitur, alt: "FITUR" },
-  { src: logoMarcaPeru, alt: "Marca Peru" },
-];
 
 const destImages: Record<string, string> = {
   Peru: destPeru,
@@ -129,21 +113,41 @@ const Index = () => {
       <section className="py-16 lg:py-24 bg-background overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <motion.div {...fadeInUp} className="text-center mb-12">
-              <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-2">
-                Luxury experiences. Tailor-made trips
-              </h2>
-              <p className="text-primary font-bold text-lg mb-4 uppercase tracking-wider">
+            <motion.div {...fadeInUp} className="text-center mb-16">
+              <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">
                 Luxury South America Vacation Packages
-              </p>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-6">
-                Experience Peru through exclusive, custom-designed luxury journeys.
-              </p>
-              <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-12" />
+              </h2>
+              <div className="max-w-3xl mx-auto space-y-8">
+                <p className="text-primary font-heading text-xl md:text-2xl font-medium italic leading-relaxed">
+                  Experience Peru through exclusive, custom-designed luxury journeys.
+                </p>
+
+                <div className="space-y-6 text-muted-foreground text-base md:text-lg leading-relaxed font-medium">
+                  <p>
+                    <span className="text-foreground font-bold">Machu Picchu Travel Tour</span> is a site of the Travel and Tourism Agency <span className="text-foreground font-bold">Leading Peru Travel S.R.L.</span> (RUC 20601234506), based in the heart of Peru.
+                    We bring over 15 years of passion, dedication, and meticulous attention to detail to the creation of unforgettable, dream journeys.
+                  </p>
+
+                  <p>
+                    South America is one of the most diverse regions on Earth, home to extraordinary ancient civilizations and breathtaking natural landscapes.
+                    Our experienced team is devoted to ensuring you experience the trip of a lifetime.
+                  </p>
+
+                  <p className="text-foreground font-semibold uppercase tracking-[0.2em] text-sm">
+                    At Machu Picchu Travel Tour, we invite you to explore this remarkable world of vibrant colors, rich sensations, and truly unforgettable moments—crafted exclusively for you.
+                  </p>
+
+                  <p className="text-primary font-heading text-lg italic">
+                    We warmly invite you to discover it all with us.
+                  </p>
+                </div>
+              </div>
+
+              <div className="w-24 h-1.5 bg-primary/30 mx-auto rounded-full mt-16 shadow-sm" />
             </motion.div>
 
             <motion.div {...fadeInUp} className="text-center mb-12">
-              <h3 className="font-heading text-2xl lg:text-3xl font-bold text-foreground">Why Choose Leading Peru Travel</h3>
+              <h3 className="font-heading text-2xl lg:text-3xl font-bold text-foreground uppercase tracking-wider">Why Choose Leading Peru Travel</h3>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -234,10 +238,6 @@ const Index = () => {
                   <div className="p-6 pt-4">
                     <p className="text-muted-foreground text-sm line-clamp-2">{tour.shortDescription}</p>
                     <div className="flex items-center justify-between mt-4 pt-4 border-t border-border">
-                      <div>
-                        <span className="text-xs text-muted-foreground">From</span>
-                        <p className="text-primary font-bold text-lg">USD ${tour.price.toLocaleString()}</p>
-                      </div>
                       <span className="text-sm text-muted-foreground font-semibold">{tour.duration} days</span>
                     </div>
                   </div>
@@ -363,20 +363,26 @@ const Index = () => {
                     alt={post.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
+
                   <div className="absolute top-4 left-4">
                     <span className="bg-primary/90 backdrop-blur-md text-primary-foreground px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg">
                       {post.category}
                     </span>
                   </div>
-                </Link>
-                <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-center gap-2 text-[10px] text-muted-foreground mb-3 font-bold uppercase tracking-wider">
-                    <Calendar className="w-3.5 h-3.5 text-primary" />
-                    {post.date}
+
+                  <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+                    <h3 className="font-heading text-xl lg:text-2xl font-bold text-background leading-tight mb-2 group-hover:text-primary-foreground transition-colors line-clamp-2">
+                      {post.title}
+                    </h3>
+                    <div className="flex items-center gap-2 text-[10px] text-background/70 uppercase tracking-widest font-bold">
+                      <Calendar className="w-3.5 h-3.5 text-primary" />
+                      {post.date}
+                    </div>
                   </div>
-                  <h3 className="font-heading text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors line-clamp-2">
-                    {post.title}
-                  </h3>
+                </Link>
+
+                <div className="p-6 flex flex-col flex-1">
                   <p className="text-muted-foreground text-sm leading-relaxed mb-6 line-clamp-3">
                     {post.excerpt}
                   </p>
@@ -428,27 +434,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ACCREDITATIONS SECTION */}
-      <section className="py-16 bg-background border-t border-border/50">
-        <div className="container mx-auto px-4">
-          <motion.div {...fadeInUp} className="text-center">
-            <h3 className="font-heading text-sm font-bold text-foreground uppercase tracking-[0.4em] mb-12 opacity-70">
-              We are a legally accredited company
-            </h3>
-            <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20">
-              {partnerLogos.map((logo, idx) => (
-                <div key={idx} className="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500 transform hover:scale-110">
-                  <img
-                    src={logo.src}
-                    alt={logo.alt}
-                    className="h-8 md:h-10 w-auto object-contain"
-                  />
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </Layout>
   );
 };

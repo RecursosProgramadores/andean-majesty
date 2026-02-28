@@ -46,7 +46,6 @@ const Blog = () => {
             image: destPeru,
             slug: "lima-to-machu-picchu-memorable-journey",
             badge: "Best Seller",
-            price: "$3,290"
         },
         {
             title: "Bolivia Highlights",
@@ -55,7 +54,6 @@ const Blog = () => {
             image: destBolivia,
             slug: "memorable-bolivia-experience",
             badge: "Top Rated",
-            price: "$4,390"
         },
         {
             title: "Galapagos Adventure",
@@ -64,7 +62,6 @@ const Blog = () => {
             image: destEcuador,
             slug: "galapagos-machu-picchu-nature-wonders",
             badge: "Nature Choice",
-            price: "$6,490"
         },
     ];
 
@@ -132,27 +129,31 @@ const Blog = () => {
                                                     onClick={() => setSelectedPost(post)}
                                                     className="group cursor-pointer flex flex-col bg-card rounded-[2.5rem] overflow-hidden shadow-2xl border border-border/40 hover:border-primary/30 transition-all duration-500 transform hover:-translate-y-3"
                                                 >
-                                                    <div className="aspect-[16/11] overflow-hidden relative">
+                                                    <div className="aspect-[3/4] overflow-hidden relative">
                                                         <img
                                                             src={post.image}
                                                             alt={post.title}
                                                             className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                                                         />
+                                                        <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/20 to-transparent" />
+
                                                         <div className="absolute top-6 left-6">
                                                             <span className="bg-primary/90 backdrop-blur-md text-primary-foreground px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-xl">
                                                                 {post.category}
                                                             </span>
                                                         </div>
-                                                        <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
-                                                    </div>
-                                                    <div className="p-10 flex-1 flex flex-col">
-                                                        <div className="flex items-center gap-2 text-[10px] text-muted-foreground mb-4 font-black uppercase tracking-[0.2em]">
-                                                            <Calendar className="w-3.5 h-3.5 text-primary" />
-                                                            {post.date}
+
+                                                        <div className="absolute bottom-0 left-0 right-0 p-8 z-10">
+                                                            <h3 className="font-heading text-2xl lg:text-3xl font-black mb-3 text-background group-hover:text-primary-foreground transition-colors leading-tight">
+                                                                {post.title}
+                                                            </h3>
+                                                            <div className="flex items-center gap-2 text-[10px] text-background/70 font-black uppercase tracking-[0.2em]">
+                                                                <Calendar className="w-3.5 h-3.5 text-primary" />
+                                                                {post.date}
+                                                            </div>
                                                         </div>
-                                                        <h3 className="font-heading text-2xl lg:text-3xl font-black mb-5 text-foreground group-hover:text-primary transition-colors leading-tight">
-                                                            {post.title}
-                                                        </h3>
+                                                    </div>
+                                                    <div className="p-10 pt-8 flex-1 flex flex-col">
                                                         <p className="text-muted-foreground/80 text-base leading-relaxed mb-8 line-clamp-3 font-medium">
                                                             {post.excerpt}
                                                         </p>
@@ -353,7 +354,7 @@ const Blog = () => {
                                 whileHover={{ y: -15 }}
                                 className="group relative bg-card rounded-[3rem] overflow-hidden shadow-2xl border border-border/40 transition-all duration-700 hover:shadow-[0_64px_96px_-32px_rgba(0,0,0,0.25)]"
                             >
-                                <div className="relative h-80 overflow-hidden">
+                                <div className="relative aspect-[3/4] overflow-hidden">
                                     <img src={tour.image} alt={tour.title} className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" />
 
                                     {/* Floating Badge */}
@@ -379,9 +380,6 @@ const Blog = () => {
                                             <span className="text-[10px] font-black uppercase tracking-[0.3em] opacity-90">{tour.location}</span>
                                         </div>
                                         <h3 className="font-heading text-3xl font-black uppercase tracking-tight leading-none mb-4">{tour.title}</h3>
-                                        <div className="text-primary font-black text-xl mb-2 drop-shadow-lg">
-                                            From {tour.price}
-                                        </div>
                                     </div>
                                 </div>
                                 <div className="p-10 pt-4">

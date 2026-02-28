@@ -125,25 +125,39 @@ const Tours = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
                 {filtered.map((tour, i) => (
                   <motion.div key={tour.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: i * 0.05 }}>
-                    <Link to={`/tours/${tour.slug}`} className="group block bg-card rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500">
-                      <div className="relative overflow-hidden aspect-[4/3]">
-                        <img src={tour.image} alt={`${tour.title} luxury tour`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <Link to={`/tours/${tour.slug}`} className="group block bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500">
+                      <div className="relative aspect-[3/4] overflow-hidden">
+                        <img
+                          src={tour.image}
+                          alt={`${tour.title} luxury tour`}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
+
                         {tour.badge && (
-                          <span className="absolute top-4 left-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">{tour.badge}</span>
-                        )}
-                      </div>
-                      <div className="p-5">
-                        <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
-                          <MapPin className="w-3 h-3" />{tour.destinations.join(" • ")}
-                        </div>
-                        <h3 className="font-heading text-lg font-bold text-foreground group-hover:text-primary transition-colors">{tour.title}</h3>
-                        <p className="text-muted-foreground text-sm mt-2 line-clamp-2">{tour.shortDescription}</p>
-                        <div className="flex items-center justify-between mt-4 pt-4 border-t border-border">
-                          <div>
-                            <span className="text-xs text-muted-foreground">From</span>
-                            <p className="text-accent font-bold text-lg">USD ${tour.price.toLocaleString()}</p>
+                          <div className="absolute top-4 left-4">
+                            <span className="bg-primary/90 backdrop-blur-md text-primary-foreground px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg">
+                              {tour.badge}
+                            </span>
                           </div>
-                          <span className="text-sm text-muted-foreground">{tour.duration} days</span>
+                        )}
+
+                        <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+                          <h3 className="font-heading text-xl font-bold text-background leading-tight mb-2 group-hover:text-primary-foreground transition-colors line-clamp-2">
+                            {tour.title}
+                          </h3>
+                          <div className="flex items-center gap-2 text-[10px] text-background/70 uppercase tracking-widest font-bold">
+                            <MapPin className="w-3.5 h-3.5 text-primary" />
+                            {tour.destinations.join(" • ")}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="p-6">
+                        <p className="text-muted-foreground text-sm line-clamp-3 leading-relaxed mb-4">{tour.shortDescription}</p>
+                        <div className="flex items-center justify-between pt-4 border-t border-border">
+                          <span className="text-[10px] text-muted-foreground/60 font-black uppercase tracking-widest italic">Price on request</span>
+                          <span className="text-sm text-muted-foreground font-bold">{tour.duration} days</span>
                         </div>
                       </div>
                     </Link>

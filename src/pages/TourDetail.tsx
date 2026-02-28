@@ -74,7 +74,6 @@ const TourDetail = () => {
             <span className="flex items-center gap-1 text-background/80 text-sm"><Clock className="w-4 h-4" />{tour.duration} days</span>
             {tour.badge && <span className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-bold uppercase">{tour.badge}</span>}
           </div>
-          <p className="mt-2 text-accent font-bold text-2xl">From USD ${tour.price.toLocaleString()}</p>
         </div>
       </section>
 
@@ -105,6 +104,21 @@ const TourDetail = () => {
 
                 {/* Itinerary Timeline (Overview) */}
                 <div className="mt-12 space-y-0 border-b border-border pb-12">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    className="w-full h-64 md:h-80 rounded-2xl overflow-hidden mb-12 shadow-2xl relative group"
+                  >
+                    <img
+                      src={tour.gallery && tour.gallery.length > 0 ? tour.gallery[0] : tour.image}
+                      alt="Tour Banner"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+                      <p className="text-white font-heading text-2xl md:text-3xl font-bold tracking-tight">Your Journey Awaits</p>
+                    </div>
+                  </motion.div>
                   <h3 className="font-heading text-xl font-bold text-foreground mb-8">Itinerary Overview</h3>
                   {tour.itinerary.map((day, idx) => (
                     <motion.div
@@ -304,11 +318,6 @@ const TourDetail = () => {
                   <div className="absolute top-0 right-0 w-40 h-40 bg-primary/10 rounded-full -mr-20 -mt-20 blur-3xl transition-opacity duration-700 group-hover:opacity-50"></div>
                   <div className="relative z-10">
                     <p className="text-white/60 text-xs uppercase tracking-widest font-bold mb-2">Exclusive Offer</p>
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-white/50 text-sm font-medium">From</span>
-                      <p className="text-primary font-bold text-4xl md:text-5xl font-heading">USD ${tour.price.toLocaleString()}</p>
-                    </div>
-                    <p className="text-white/40 text-xs mt-2 uppercase tracking-tighter">per person • all-inclusive luxury</p>
                   </div>
 
                   <div className="space-y-4 relative z-10">

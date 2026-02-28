@@ -6,17 +6,22 @@ import { ShieldCheck, Lock, Eye, FileText } from "lucide-react";
 const PrivacyPolicy = () => {
     return (
         <Layout>
-            <section className="pt-32 pb-20 bg-background">
-                <div className="container mx-auto px-4 max-w-4xl">
+            <section className="relative pt-40 pb-20 bg-[#e6c64f] overflow-hidden">
+                <div className="absolute inset-0 opacity-10">
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black" />
+                </div>
+                <div className="container mx-auto px-4 max-w-4xl relative z-10 text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-center mb-16"
                     >
-                        <h1 className="font-heading text-4xl lg:text-6xl font-bold text-foreground mb-6">Privacy Policy</h1>
-                        <p className="text-muted-foreground text-lg italic">Your privacy is our priority at Andean Majesty.</p>
+                        <h1 className="font-heading text-4xl lg:text-7xl font-black text-black mb-6 uppercase tracking-tighter">Privacy <span className="text-foreground italic">Policy</span></h1>
+                        <p className="text-black/60 text-lg italic tracking-widest uppercase font-bold text-sm">Your privacy is our priority at Andean Majesty.</p>
                     </motion.div>
-
+                </div>
+            </section>
+            <section className="py-24 bg-background">
+                <div className="container mx-auto px-4 max-w-4xl">
                     <div className="space-y-12 text-foreground/80 leading-relaxed">
                         <section className="space-y-4">
                             <div className="flex items-center gap-3 text-primary mb-2">
@@ -78,7 +83,7 @@ const PrivacyPolicy = () => {
                     </div>
                 </div>
             </section>
-        </Layout>
+        </Layout >
     );
 };
 

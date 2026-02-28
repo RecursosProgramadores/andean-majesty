@@ -4,11 +4,57 @@ import logo from "@/assets/logos/logo.png";
 import whatsappIcon from "@/assets/logos/whatsapp.svg";
 import facebookIcon from "@/assets/logos/facebook.svg";
 import claimsBookImg from "@/assets/logos/libroreclamaciones.jpeg";
+import { motion } from "framer-motion";
+
+// Accreditation Logos
+import logoAATC from "@/assets/company/AATC.webp";
+import logoMincetur from "@/assets/company/MINCETUR.png";
+import logoPromPeru from "@/assets/company/PromPeru.png";
+import logoCamaraCusco from "@/assets/company/camaracusco.png";
+import logoDircetur from "@/assets/company/dircetur.png";
+import logoFitur from "@/assets/company/logo-FITUR.png";
+import logoMarcaPeru from "@/assets/company/marcaperu.png";
+
+const partnerLogos = [
+  { src: logoAATC, alt: "AATC" },
+  { src: logoMincetur, alt: "MINCETUR" },
+  { src: logoPromPeru, alt: "PromPeru" },
+  { src: logoCamaraCusco, alt: "Camara Cusco" },
+  { src: logoDircetur, alt: "Dircetur" },
+  { src: logoFitur, alt: "FITUR" },
+  { src: logoMarcaPeru, alt: "Marca Peru" },
+];
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1a1a1a] text-[#f5f5f5] pt-16 pb-8 border-t border-white/5">
+    <footer className="bg-[#1a1a1a] text-[#f5f5f5] pt-12 pb-8 border-t border-white/5">
       <div className="container mx-auto px-4 lg:px-8">
+
+        {/* TOP ACCREDITATIONS BAR */}
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12 mb-16 pb-12 border-b border-white/5">
+          <span className="text-white/40 text-[10px] md:text-sm font-bold uppercase tracking-[0.3em] whitespace-nowrap">
+            Destacado en:
+          </span>
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
+            {partnerLogos.map((logo, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 transform hover:scale-110"
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="h-6 md:h-8 w-auto object-contain"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
 
           {/* Column 1: Membership/Brand */}

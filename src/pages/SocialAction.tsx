@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import { Heart, Globe, Users, Shield, Award, Activity, HeartHandshake, UserPlus } from "lucide-react";
+import destPeru from "@/assets/dest-peru.jpg";
 
 const SocialAction = () => {
     const values = [
@@ -20,41 +21,28 @@ const SocialAction = () => {
 
     return (
         <Layout>
-            {/* 2. Hero / Philosophy Section */}
-            <section className="bg-white py-20 lg:py-32 border-b border-border/30 overflow-hidden relative">
+            {/* 1. Immersive Hero Section */}
+            <section className="relative h-[80vh] flex items-center overflow-hidden">
+                <div className="absolute inset-0">
+                    <img src={destPeru} alt="Peru Community" className="w-full h-full object-cover scale-105" />
+                    <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]" />
+                </div>
                 <div className="container mx-auto px-4 lg:px-8 relative z-10">
-                    <div className="text-center max-w-4xl mx-auto space-y-12">
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            className="inline-flex items-center gap-4 bg-primary/10 text-primary px-8 py-3 rounded-full text-sm font-black uppercase tracking-[0.4em]"
-                        >
-                            <Heart className="w-5 h-5" /> Social Help
-                        </motion.div>
-                        <motion.h1
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="font-heading text-6xl md:text-8xl font-black text-foreground tracking-tighter leading-none"
-                        >
-                            "Knowing, Wanting, <br /> Working"
-                        </motion.h1>
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.1 }}
-                            className="text-2xl md:text-3xl font-heading text-primary font-bold uppercase tracking-widest"
-                        >
-                            El Yachay, EL Munay and el LLankáy
-                        </motion.p>
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.2 }}
-                            className="text-muted-foreground text-xl md:text-2xl leading-relaxed italic font-medium pt-8"
-                        >
-                            "People are the most important within all our operations. <br className="hidden md:block" /> We are people who want people."
-                        </motion.div>
-                    </div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="max-w-4xl"
+                    >
+                        <span className="text-accent font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-lg">
+                            Building a Brighter Future
+                        </span>
+                        <h1 className="font-heading text-6xl md:text-9xl font-black text-white mb-8 tracking-tighter leading-none drop-shadow-2xl">
+                            Knowing <span className="text-accent italic">&</span> Working
+                        </h1>
+                        <p className="text-white/80 text-xl md:text-3xl font-medium leading-relaxed max-w-2xl border-l-4 border-accent pl-8 py-2">
+                            "El Yachay, El Munay and El Llankáy" — People who care for people.
+                        </p>
+                    </motion.div>
                 </div>
             </section>
 

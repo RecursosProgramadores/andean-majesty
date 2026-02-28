@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import { Sun, ShieldCheck, Award, ChevronRight, Check } from "lucide-react";
+import destAmazon from "@/assets/dest-amazon.jpg";
 
 const ResponsibleTravel = () => {
     const trustPillars = [
@@ -31,33 +32,28 @@ const ResponsibleTravel = () => {
 
     return (
         <Layout>
-            {/* 2. Hero / Trust Banner */}
-            <section className="bg-white py-20 lg:py-32 border-b border-border/30 overflow-hidden relative">
+            {/* 1. Immersive Hero Section */}
+            <section className="relative h-[80vh] flex items-center overflow-hidden">
+                <div className="absolute inset-0">
+                    <img src={destAmazon} alt="Amazon Rainforest" className="w-full h-full object-cover scale-105" />
+                    <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]" />
+                </div>
                 <div className="container mx-auto px-4 lg:px-8 relative z-10">
-                    <div className="max-w-4xl space-y-8">
-                        <motion.span
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            className="text-primary font-black uppercase tracking-[0.4em] text-xs block"
-                        >
-                            A Fully Licensed & Responsible Agency
-                        </motion.span>
-                        <motion.h1
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="font-heading text-6xl md:text-8xl font-black text-foreground tracking-tighter leading-none"
-                        >
-                            Excellence in <br /> Every Journey
-                        </motion.h1>
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.1 }}
-                            className="text-2xl md:text-3xl text-muted-foreground leading-relaxed font-medium max-w-2xl"
-                        >
-                            Focuses on offering authentic, personalized and socially responsible tourism experiences backed by 15 years of expertise.
-                        </motion.p>
-                    </div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="max-w-4xl"
+                    >
+                        <span className="text-accent font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-lg">
+                            Commitment to Excellence
+                        </span>
+                        <h1 className="font-heading text-6xl md:text-9xl font-black text-white mb-8 tracking-tighter leading-none drop-shadow-2xl">
+                            Travel <span className="text-accent italic">Responsible</span>
+                        </h1>
+                        <p className="text-white/80 text-xl md:text-3xl font-medium leading-relaxed max-w-2xl border-l-4 border-accent pl-8 py-2">
+                            Excellence in every journey, backed by 15 years of personalized and sustainable expertise.
+                        </p>
+                    </motion.div>
                 </div>
             </section>
 

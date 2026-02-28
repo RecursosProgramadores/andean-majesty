@@ -115,10 +115,6 @@ const RelatedToursCarousel: React.FC<RelatedToursCarouselProps> = ({ country }) 
                                                         </span>
                                                     </div>
                                                     <div className="text-right">
-                                                        <span className="text-[10px] text-muted-foreground uppercase tracking-widest block mb-0.5">From</span>
-                                                        <span className="text-lg font-bold text-foreground">
-                                                            ${tour.price.toLocaleString()}
-                                                        </span>
                                                     </div>
                                                 </div>
                                             </div>

@@ -16,7 +16,7 @@ interface NavItem {
 const navLinks: NavItem[] = [
   { label: "Home", to: "/" },
   {
-    label: "Tour Packages",
+    label: "South America travel packages",
     to: "/tours",
     submenu: [
       { label: "Peru Tours", to: "/tours?country=Peru" },
@@ -67,11 +67,14 @@ const Navbar = () => {
       setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [location.pathname]);
+
+  const isGoldPage = location.pathname.includes("privacy-policy") || location.pathname.includes("terms-conditions");
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "shadow-card border-b border-black/10" : ""}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${(isScrolled || isGoldPage) ? "shadow-card border-b border-black/10" : ""}`}>
       {/* Top Bar */}
       <div className={`bg-black text-[#e6c64f] text-[10px] py-1.5 hidden lg:block border-b border-[#e6c64f]/10 transition-all duration-300 ${isScrolled ? "opacity-100" : "opacity-0 h-0 overflow-hidden py-0 border-0"}`}>
         <div className="container mx-auto px-4 lg:px-8 flex justify-end gap-6 font-bold uppercase tracking-widest">
@@ -90,7 +93,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className={`transition-all duration-500 ${isScrolled ? "bg-[#e6c64f]" : "bg-transparent"} container-fluid`}>
+      <div className={`transition-all duration-500 ${(isScrolled || isGoldPage) ? "bg-[#e6c64f]" : "bg-transparent"} container-fluid`}>
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
@@ -113,8 +116,8 @@ const Navbar = () => {
                 >
                   <Link
                     to={link.to || "#"}
-                    className={`text-[13px] font-bold uppercase tracking-wider transition-all flex items-center gap-1 py-4 ${isScrolled ? "text-black hover:text-black/60" : "text-white hover:text-[#e6c64f]"} ${location.pathname === link.to && isScrolled ? "text-black" :
-                      location.pathname === link.to && !isScrolled ? "text-[#e6c64f]" : ""
+                    className={`text-[13px] font-bold uppercase tracking-wider transition-all flex items-center gap-1 py-4 ${(isScrolled || isGoldPage) ? "text-black hover:text-black/60" : "text-white hover:text-[#e6c64f]"} ${(location.pathname === link.to && (isScrolled || isGoldPage)) ? "text-black" :
+                      location.pathname === link.to && !(isScrolled || isGoldPage) ? "text-[#e6c64f]" : ""
                       }`}
                   >
                     {link.label}
@@ -159,7 +162,7 @@ const Navbar = () => {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`lg:hidden p-2 transition-colors ${isScrolled ? "text-black" : "text-white"}`}
+              className={`lg:hidden p-2 transition-colors ${(isScrolled || isGoldPage) ? "text-black" : "text-white"}`}
               aria-label="Toggle navigation menu"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -243,7 +246,7 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </nav >
   );
 };
 
