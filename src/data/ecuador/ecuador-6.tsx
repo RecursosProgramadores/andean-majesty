@@ -9,9 +9,9 @@ import imgGalapagos3 from "@/assets/destinos/galapagos/islasgalapagosecuador.web
 import imgGalapagos4 from "@/assets/destinos/galapagos/HiddenGalapagosisland.webp";
 import imgLimaCity from "@/assets/destinos/lima/LimaCityTour.jpg";
 import imgPisac from "@/assets/destinos/vallesagrado/vallesagradodeincas.jpg";
-import imgOllantaytambo from "@/assets/destinos/vallesagrado/ollantaytambovallesagrado.jpg";
+import imgOllantaytambo from "@/assets/destinos/vallesagrado/Ollantaytambo.jpg";
 import imgMachuPicchu from "@/assets/destinos/machupichu/MachuPichuPeru.webp";
-import imgSacsayhuaman from "@/assets/destinos/cusco/sacsayhuaman.jpg";
+import imgSacsayhuaman from "@/assets/destinos/cusco/sacsayhuamancitytourcusco.jpeg";
 
 export const ecuador6: Tour = {
     id: "6",

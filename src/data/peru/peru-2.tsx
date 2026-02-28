@@ -9,7 +9,7 @@ import imgOllanta from "@/assets/destinos/vallesagrado/Ollantaytambo.jpg";
 import imgMachuPicchu from "@/assets/destinos/machupichu/MachuPichuPeru.webp";
 import imgCuscoCity from "@/assets/destinos/cusco/cusco-main-squeare.jpg";
 import imgRaqchi from "@/assets/destinos/raqchi/raqchi.jpg";
-import imgTiticaca from "@/assets/destinos/lagotiticaca/lagotiticaca.jpg";
+import imgTiticaca from "@/assets/destinos/lagotiticaca/Uros-Titicaca.webp";
 import imgLimaCity from "@/assets/destinos/lima/LimaCityTour.jpg";
 
 export const peru2: Tour = {

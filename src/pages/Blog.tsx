@@ -355,7 +355,7 @@ const Blog = () => {
                                 className="group relative bg-card rounded-[3rem] overflow-hidden shadow-2xl border border-border/40 transition-all duration-700 hover:shadow-[0_64px_96px_-32px_rgba(0,0,0,0.25)]"
                             >
                                 <div className="relative aspect-[3/4] overflow-hidden">
-                                    <img src={tour.image} alt={tour.title} className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" />
+                                    <img src={tour.image} alt={tour.title} className="w-full h-full object-cover transition-transform [transition-duration:2000ms] group-hover:scale-110" />
 
                                     {/* Floating Badge */}
                                     <div className="absolute top-8 left-8 z-20">

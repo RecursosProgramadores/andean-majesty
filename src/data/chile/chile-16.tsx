@@ -3,10 +3,10 @@ import destChile from "@/assets/dest-chile.jpg";
 import destBolivia from "@/assets/dest-bolivia.jpg";
 
 // Destination Images
-import imgSacsayhuaman from "@/assets/destinos/cusco/sacsayhuaman.jpg";
+import imgSacsayhuaman from "@/assets/destinos/cusco/sacsayhuamancitytourcusco.jpeg";
 import imgPisac from "@/assets/destinos/vallesagrado/vallesagradodeincas.jpg";
 import imgMachuPicchu from "@/assets/destinos/machupichu/MachuPichuPeru.webp";
-import imgRaqchi from "@/assets/destinos/raqchi/RaqchiCusco.jpg";
+import imgRaqchi from "@/assets/destinos/raqchi/Raqchi.jpg";
 import imgUros from "@/assets/destinos/lagotiticaca/islalosuros.jpg";
 import imgSunIsland from "@/assets/destinos/lagotiticaca/islatakile.jpg";
 import imgTiticaca from "@/assets/tour-titicaca.jpg";

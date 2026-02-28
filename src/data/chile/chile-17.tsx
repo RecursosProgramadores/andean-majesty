@@ -4,11 +4,11 @@ import destBolivia from "@/assets/dest-bolivia.jpg";
 
 // Destination Images
 import imgLimaCity from "@/assets/destinos/lima/LimaCityTour.jpg";
-import imgParacas from "@/assets/destinos/paracas/paracas.jpg";
-import imgNazca from "@/assets/destinos/nazca/Nazca_Lines_Peru.jpg";
+import imgParacas from "@/assets/destinos/paracas/PARACAS.jpg";
+import imgNazca from "@/assets/destinos/nazca/sobrevueloNazca.jpg";
 import imgMachuPicchu from "@/assets/destinos/machupichu/MachuPichuPeru.webp";
-import imgRainbow from "@/assets/destinos/montana7colores/montana7colores.jpg";
-import imgRaqchi from "@/assets/destinos/raqchi/RaqchiCusco.jpg";
+import imgRainbow from "@/assets/destinos/montana7colores/montanacolores.jpg";
+import imgRaqchi from "@/assets/destinos/raqchi/Raqchi.jpg";
 import imgUros from "@/assets/destinos/lagotiticaca/islalosuros.jpg";
 import imgSunIsland from "@/assets/destinos/lagotiticaca/islatakile.jpg";
 import imgTiticaca from "@/assets/tour-titicaca.jpg";

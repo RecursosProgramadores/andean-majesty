@@ -7,7 +7,7 @@ import imgSunIsland from "@/assets/destinos/lagotiticaca/islatakile.jpg";
 import imgMoonIsland from "@/assets/destinos/lagotiticaca/La_isla_de_Taquile.jpg";
 import imgUyuni1 from "@/assets/destinos/uyuni/BoliviaSalaruyuni.jpg";
 import imgUyuni2 from "@/assets/destinos/uyuni/stargazingenuyuni.jpg";
-import imgSacsayhuaman from "@/assets/destinos/cusco/sacsayhuaman.jpg";
+import imgSacsayhuaman from "@/assets/destinos/cusco/sacsayhuamancitytourcusco.jpeg";
 import imgPisac from "@/assets/destinos/vallesagrado/vallesagradodeincas.jpg";
 import imgOllanta from "@/assets/destinos/vallesagrado/Ollantaytambo.jpg";
 import imgMachuPicchu from "@/assets/destinos/machupichu/MachuPichuPeru.webp";

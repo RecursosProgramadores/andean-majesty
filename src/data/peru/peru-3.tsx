@@ -7,7 +7,7 @@ import imgLimaPlaza from "@/assets/destinos/lima/PLAZADEARMASLIMA.jpg";
 import imgArequipa from "@/assets/tour-colca.jpg"; // Using existing Colca/Arequipa image as fallback
 import imgColcaCanyon from "@/assets/destinos/canoncolca/THE-COLCA-CANYON.jpg";
 import imgColcaCondor from "@/assets/destinos/canoncolca/condorcanonqolca.jpg";
-import imgTiticaca from "@/assets/destinos/lagotiticaca/lagotiticaca.jpg";
+import imgTiticaca from "@/assets/destinos/lagotiticaca/Uros-Titicaca.webp";
 import imgRaqchi from "@/assets/destinos/raqchi/raqchi.jpg";
 import imgCuscoCity from "@/assets/destinos/cusco/cusco-main-squeare.jpg";
 import imgPisac from "@/assets/destinos/vallesagrado/vallesagradodeincas.jpg";

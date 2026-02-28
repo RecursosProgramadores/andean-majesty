@@ -3,8 +3,8 @@ import heroMachuPicchu from "@/assets/hero-machu-picchu.jpg";
 
 // Destination Images
 import imgLimaPlaza from "@/assets/destinos/lima/PLAZADEARMASLIMA.jpg";
-import imgAmazon1 from "@/assets/destinos/puertomaldonado/Puerto-Maldonado-Peru.jpg";
-import imgAmazon2 from "@/assets/destinos/puertomaldonado/tambopata.png";
+import imgAmazon1 from "@/assets/destinos/puertomaldonado/PuertoMaldonadoLagoSandoval.jpg";
+import imgAmazon2 from "@/assets/destinos/puertomaldonado/PuertoMaldonadOSandoval.jpg";
 import imgPisac from "@/assets/destinos/vallesagrado/vallesagradodeincas.jpg";
 import imgOllanta from "@/assets/destinos/vallesagrado/Ollantaytambo.jpg";
 import imgMachuPicchu from "@/assets/destinos/machupichu/MachuPichuPeru.webp";
